@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DepartmentController extends Controller
 {
@@ -21,6 +22,25 @@ class DepartmentController extends Controller
     }
 
     public function store(Request $request){
+
+
+      $validate= Validator::make($request->all(),[
+        
+        
+       'department_name'=>'required',
+       'department_no'=>'required'
+
+
+      ]);
+
+
+      if($validate->fails()){
+
+
+        // notify()->error($validate->getMessageBag());
+        return redirect()->back()->withErrors($validate);
+
+    }
         // dd($request-> all());
 
         Department::create(
@@ -31,6 +51,7 @@ class DepartmentController extends Controller
                 'location'=>$request->department_location
             ]
             );
+            notify()->success('your data has been stored!');
             return redirect()->back();
     
     }

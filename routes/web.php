@@ -33,13 +33,16 @@ use App\Http\Controllers\SalarystractureController;
 //ami ja likhbo ekhane sob lower case e hobe.
 
 Route::get('/',[HomeController::class,'Home']);
+
+
+
 Route::get('/Employee',[EmployeeController::class,'employee']);
 Route::get('/Employee/form',[EmployeeController::class,'form']);
 Route::post('/Employee/store',[EmployeeController::class,'store'])->name('store.list');
 
 
 
-//Route::get('/Department',[DepartmentController::class,'department']);
+Route::get('/Department',[DepartmentController::class,'department']);
 Route::get('/department/list',[DepartmentController::class,'list'])->name('department.list');
 Route::get('/department/creatform',[DepartmentController::class,'creatform'])->name('department.form');
 Route::post('/department/store',[DepartmentController::class,'store'])->name('department.store');
@@ -49,7 +52,13 @@ Route::post('/department/store',[DepartmentController::class,'store'])->name('de
 
 
 Route::get('/Designation',[DesignationController::class,'designation']);
-Route::get('/Designation/list',[DesignationController::class,'list'])->name('designation.list');
+Route::get('/designation/list',[DesignationController::class,'list'])->name('designation.list');
+Route::post('/designation/store',[DesignationController::class,'store'])->name('designation.store');
+
+
+
+
+
 
 
 
@@ -68,6 +77,7 @@ Route::post('/salarystracture/store',[SalarystractureController::class,'store'])
 
 
 
+Route::get('/Leave/list',[LeaveController::class,'list'])->name('leave.list');
 
 
 
@@ -79,11 +89,35 @@ Route::post('/salarystracture/store',[SalarystractureController::class,'store'])
 
 
 
-Route::get('/Leave',[LeaveController::class,'leave']);
-Route::get('/Leave/Type',[LeaveTypeController::class,'leavetype']);
-Route::get('/Notice',[NoticeController::class,'notice']);
-Route::get('/Attendence',[AttendenceController::class,'attendence']);
-Route::get('/Reportt',[ReportController::class,'report']);
-Route::get('/Admin',[AdminController::class,'admin']);
-Route::get('/Company/setup',[CompanysetupController::class,'setup']);
-Route::get('/Holiday/calander',[CalanderController::class,'calander']);
+
+
+
+
+
+
+// Route::get('/Leave/Type',[LeaveTypeController::class,'leavetype']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/Notice',[NoticeController::class,'notice']);
+// Route::get('/Attendence',[AttendenceController::class,'attendence']);
+// Route::get('/Reportt',[ReportController::class,'report']);
+// Route::get('/Admin',[AdminController::class,'admin']);
+// Route::get('/Company/setup',[CompanysetupController::class,'setup']);
+// Route::get('/Holiday/calander',[CalanderController::class,'calander']);

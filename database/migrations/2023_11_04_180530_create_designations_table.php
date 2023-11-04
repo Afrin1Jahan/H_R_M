@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('designation', function (Blueprint $table) {
+        Schema::create('designations', function (Blueprint $table) {
             $table->id();
-            $table->text('title',100)->unique();
-            $table->text('description')->nullable();
-            $table->double('salaryrange',20,2)->default(0);
+            $table->string('title',50);
+            $table->string('description',100);
+            $table->string('date',15);
+            $table->string('status',100);
 
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('designation');
+        Schema::dropIfExists('designations');
     }
 };

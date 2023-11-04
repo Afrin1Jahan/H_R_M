@@ -25,7 +25,8 @@
   <tr>
       <th scope="row">#</th>
       <th> {{$employee->id}}</th>
-      <td>{{$employee-> name}}</td>
+      <td>{{$employee->$department->name}}</td>
+      <td>{{$employee->$designation->status}}</td>
       <td>{{$employee-> shift}}</td>
       <td>{{$employee-> gender}}</td>
       <td>{{$employee-> image}}</td>

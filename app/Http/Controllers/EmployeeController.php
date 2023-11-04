@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class EmployeeController extends Controller
 {
     public function employee(){
 
 
-        $employees=Employee::all();
+        $employees=Employee::with(['department','designation']);
      
 
         return view("admin.pages.employee.list",compact('employees'));
@@ -20,7 +21,25 @@ class EmployeeController extends Controller
         return view("admin.pages.employee.form");
     }
 
+
 public function store(Request $request){
+
+    $validate=validator::make($request->all(),[
+
+        'Employee_Name'=>'required',
+       ' Employee_Email'=>'required',
+       'Employee_phone'=>'required|numeric|min:5'
+    ]);
+
+    if($validate->fails()){
+
+        // dd($validate->getMessageBag());
+        return redirect()->back()->withErrors($validate);
+    }
+
+
+
+
     // dd($request-> all());
     Employee::create ([
         'name'=>$request->Employee_Name,

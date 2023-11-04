@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class LeaveController extends Controller
 {
-    public function leave(){
-        return view("admin.pages.leave.leave");
+    public function list (){
+        return view('admin.pages.leave.list');
     }
 }

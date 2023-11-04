@@ -28,7 +28,7 @@
                                 Salary Stracture
                             </a>
 
-                            <a class="nav-link" href="{{url('/Leave')}}">
+                            <a class="nav-link" href="{{route('leave.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Leave
                             </a>

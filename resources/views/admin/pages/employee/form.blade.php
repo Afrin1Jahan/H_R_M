@@ -8,14 +8,22 @@
 
   <div class="form-group col-md-6">
       <label for="inputEmail4">Enter Name</label>
-      <input type="text" name="Employee_Name" class="form-control" id="inputEmail4" placeholder="EnterName">
+      <input required type="text" name="Employee_Name" class="form-control" id="inputEmail4" placeholder="EnterName">
+      @error('Employee_Name')
+
+      <div class= "alert alert-danger">{{$message}}</div>
+      @enderror
     </div>
 
 
 
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="Email" name="Employee_Email" class="form-control" id="inputEmail4" placeholder="Enter e-mail">
+      <input  required  type="Email" name="Employee_Email" class="form-control" id="inputEmail4" placeholder="Enter e-mail">
+      @error('Employee_Email')
+      <div class= "alert alert-danger">{{$message}}</div>
+      @enderror
+
     </div>
 
 
@@ -23,7 +31,11 @@
     
     <div class="form-group col-md-6">
       <label for="inputEmail4">Phone</label>
-      <input type="phone" name="Employee_phone" class="form-control" id="inputEmail4" placeholder="Enter phone">
+      <input  required    type="phone" name="Employee_phone" class="form-control" id="inputEmail4" placeholder="Enter phone">
+      @error('Employee_phone')
+      <div class= "alert alert-danger">{{$message}}</div>
+      @enderror
+
     </div>
      
 

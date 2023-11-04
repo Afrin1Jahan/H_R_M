@@ -22,10 +22,7 @@ class SalarystractureController extends Controller
         $employees=Employee::all();
 
         
-       
-
-
-        return view('admin.pages.salarystracture.form',compact('employees'));
+       return view('admin.pages.salarystracture.form',compact('employees'));
 
    
     }
