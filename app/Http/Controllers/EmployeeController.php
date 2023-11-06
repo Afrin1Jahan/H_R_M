@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -18,7 +19,9 @@ class EmployeeController extends Controller
     }
 
     public function form(){
-        return view("admin.pages.employee.form");
+
+        $departments= department::all();
+        return view("admin.pages.employee.form",compact('departments'));
     }
 
 
@@ -42,6 +45,7 @@ public function store(Request $request){
 
     // dd($request-> all());
     Employee::create ([
+        'department'=>$request->department,
         'name'=>$request->Employee_Name,
         'email'=>$request->Employee_Email,
         'phone' =>$request->Employee_phone,

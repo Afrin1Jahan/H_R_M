@@ -10,6 +10,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">id</th>
+      <th scope="col">Department id</th>
       <th scope="col">name</th>
       <th scope="col">shift</th>
       <th scope="col">gender</th>
@@ -25,8 +26,9 @@
   <tr>
       <th scope="row">#</th>
       <th> {{$employee->id}}</th>
-      <td>{{$employee->$department->name}}</td>
-      <td>{{$employee->$designation->status}}</td>
+      <!-- <th> {{$employee->department_id}}</th> -->
+      <td>{{$employee->department->name}}</td>
+      <td>{{$employee->designation->status}}</td>
       <td>{{$employee-> shift}}</td>
       <td>{{$employee-> gender}}</td>
       <td>{{$employee-> image}}</td>

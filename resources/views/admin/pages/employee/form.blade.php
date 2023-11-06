@@ -6,12 +6,12 @@
 
   <div class="form-row">
 
-  <div class="form-group col-md-6">
+    <div class="form-group col-md-6">
       <label for="inputEmail4">Enter Name</label>
       <input required type="text" name="Employee_Name" class="form-control" id="inputEmail4" placeholder="EnterName">
       @error('Employee_Name')
 
-      <div class= "alert alert-danger">{{$message}}</div>
+      <div class="alert alert-danger">{{$message}}</div>
       @enderror
     </div>
 
@@ -19,31 +19,45 @@
 
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input  required  type="Email" name="Employee_Email" class="form-control" id="inputEmail4" placeholder="Enter e-mail">
+      <input required type="Email" name="Employee_Email" class="form-control" id="inputEmail4" placeholder="Enter e-mail">
       @error('Employee_Email')
-      <div class= "alert alert-danger">{{$message}}</div>
+      <div class="alert alert-danger">{{$message}}</div>
       @enderror
 
     </div>
 
 
 
-    
+
     <div class="form-group col-md-6">
       <label for="inputEmail4">Phone</label>
-      <input  required    type="phone" name="Employee_phone" class="form-control" id="inputEmail4" placeholder="Enter phone">
+      <input required type="phone" name="Employee_phone" class="form-control" id="inputEmail4" placeholder="Enter phone">
       @error('Employee_phone')
-      <div class= "alert alert-danger">{{$message}}</div>
+      <div class="alert alert-danger">{{$message}}</div>
       @enderror
 
     </div>
-     
+
+
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Department </label>
+      <!-- <input type="number"  name="department"   class="form-control" placeholder="number"> -->
+
+      <!-- <option selected>Enter department</option> -->
+
+      <select class="form-select" name="department" aria-label="Default select example">
+        @foreach($departments as $department)
+        <option value="1">{{$department->name}}</option>
+        @endforeach
+    </div>
+
+
 
     <div class="form-group col-md-6">
       <label for="inputEmail4">image</label>
-      <input type="file"  name="Employee_image"   class="form-control" placeholder="image">
+      <input type="file" name="Employee_image" class="form-control" placeholder="image">
     </div>
-    
+
 
     <div class="form-group col-md-6">
       <label for="inputEmail4">shift</label>
@@ -51,33 +65,33 @@
     </div>
 
 
-    
+
     <div class="form-group col-md-6">
       <label for="inputEmail4">dob</label>
       <input type="text" name="Employee_dob" class="form-control" id="inputEmail4" placeholder="Enter_dob
     ">
     </div>
-    
-    
+
+
     <div class="form-group col-md-6">
       <label for="inputEmail4">gender</label>
       <input type="text" name="Employee_gender" class="form-control" id="inputEmail4" placeholder="Enter gender">
     </div>
 
 
-  
 
-    
-    
 
-    
 
-  
-  
 
-  
-  
-  <button type="submit" class="btn btn-info">Sign in</button>
+
+
+
+
+
+
+
+
+    <button type="submit" class="btn btn-info">Sign in</button>
 </form>
 
 @endsection
