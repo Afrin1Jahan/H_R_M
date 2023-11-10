@@ -46,6 +46,18 @@ Route::get('/admin/logout',[UserController::class, 'logout'])->name('admin.logou
 
 Route::get('/',[HomeController::class,'Home'])->name('dashboard');
 
+
+Route::get('/users',[UserController::class, 'list'])->name('users.list');
+Route::get('/users/create',[UserController::class,'createFrom'])->name('users.create');
+Route::post('/users/store',[UserController::class,'store'])->name('users.store');
+
+
+
+
+
+
+
+
 Route::get('/Employee',[EmployeeController::class,'employee']);
 Route::get('/Employee/form',[EmployeeController::class,'form']);
 Route::post('/Employee/store',[EmployeeController::class,'store'])->name('store.list');
@@ -105,14 +117,14 @@ Route::get('/Leave/list',[LeaveController::class,'list'])->name('leave.list');
 
 
 
-Route::get('/Leave/Type',[LeaveTypeController::class,'leavetype']);
+// Route::get('/Leave/Type',[LeaveTypeController::class,'leavetype']);
 
 
-Route::get('/Notice',[NoticeController::class,'notice']);
-Route::get('/Attendence',[AttendenceController::class,'attendence']);
-Route::get('/Reportt',[ReportController::class,'report']);
-Route::get('/Admin',[AdminController::class,'admin']);
-Route::get('/role',[RoleController::class,'role'])->name('role.role');
-Route::get('/Company/setup',[CompanysetupController::class,'setup']);
-Route::get('/Holiday/calander',[CalanderController::class,'calander']);
+// Route::get('/Notice',[NoticeController::class,'notice']);
+// Route::get('/Attendence',[AttendenceController::class,'attendence']);
+// Route::get('/Reportt',[ReportController::class,'report']);
+
+// Route::get('/role',[RoleController::class,'role'])->name('role.role');
+// Route::get('/Company/setup',[CompanysetupController::class,'setup']);
+// Route::get('/Holiday/calander',[CalanderController::class,'calander']);
 });
