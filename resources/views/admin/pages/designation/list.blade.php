@@ -3,7 +3,7 @@
 
 <H1>Designation Identity</H1>
 
-<a href="{{route('designation.list')}}" type="button" class="btn btn-warning">More Details</a>
+<a href="{{route('designation.list')}}"  class="btn btn-warning">More Details</a>
 <table class="table table-hover">
   <thead>
   <tr>

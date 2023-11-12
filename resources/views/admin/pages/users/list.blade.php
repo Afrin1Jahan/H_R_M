@@ -3,7 +3,7 @@
 @section('content')
 <h1>User List</h1>
 
-<a href="{{route('users.create')}}" class="btn btn-success">Create new User</a>
+
 <table class="table">
   <thead>
     <tr>
@@ -37,4 +37,5 @@
  
   </tbody>
 </table>
+<a href="{{route('users.create')}}"     class="btn btn-success">Create new User</a>
 @endsection

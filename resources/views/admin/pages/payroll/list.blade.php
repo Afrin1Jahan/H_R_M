@@ -2,7 +2,7 @@
 @section('content')
 <h5>Payroll System</h5>
 
-<a href="{{url('/payroll/list')}}" type="button" class="btn btn-danger">Click</a>
+<a href="{{url('/payroll/list')}}"  class="btn btn-danger">Click</a>
 
 
 <table class="table table-white">

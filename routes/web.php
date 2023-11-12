@@ -1,22 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\DesignationController;
-use App\Http\Controllers\LeaveController;
-use App\Http\Controllers\LeaveTypeController;
-use App\Http\Controllers\NoticeController;
-use App\Http\Controllers\AttendenceController;
-use App\Http\Controllers\ReportController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Frontend\Homecontroller as FrontendHomeController;
+use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\DepartmentController;
+use App\Http\Controllers\Backend\DesignationController;
+use App\Http\Controllers\Backend\LeaveController;
+use App\Http\Controllers\Backend\LeaveTypeController;
+use App\Http\Controllers\Backend\NoticeController;
+use App\Http\Controllers\Backend\AttendenceController;
+use App\Http\Controllers\Backend\ReportController;
+
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\CompanysetupController;
-use App\Http\Controllers\CalanderController;
-use App\Http\Controllers\PayrollController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\SalarystractureController;
+use App\Http\Controllers\Backend\CompanysetupController;
+use App\Http\Controllers\Backend\CalanderController;
+use App\Http\Controllers\Backend\PayrollController;
+use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\SalarystractureController;
 
 
 
@@ -35,96 +35,55 @@ use App\Http\Controllers\SalarystractureController;
 //ami ja likhbo ekhane sob lower case e hobe.
 
 
+//website panel routs
 
-Route::get('/admin/login',[UserController::class,'loginFrom'])->name('admin.login');
+Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
+
+
+//all admin panel routs
+
+Route::group(['prefix'=>'admin'],function(){
+
+
+Route::get('/login',[UserController::class,'loginFrom'])->name('admin.login');
 Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('admin.login.post');
 
 
 Route::group(['middleware' => 'auth'], function () {
-Route::get('/admin/logout',[UserController::class, 'logout'])->name('admin.logout');
 
 
+
+Route::get('/logout',[UserController::class, 'logout'])->name('admin.logout');
 Route::get('/',[HomeController::class,'Home'])->name('dashboard');
-
-
 Route::get('/users',[UserController::class, 'list'])->name('users.list');
 Route::get('/users/create',[UserController::class,'createFrom'])->name('users.create');
 Route::post('/users/store',[UserController::class,'store'])->name('users.store');
-
-
-
-
-
-
-
-
-Route::get('/Employee',[EmployeeController::class,'employee']);
+Route::get('/Employee',[EmployeeController::class,'employee'])->name('employee.name');
 Route::get('/Employee/form',[EmployeeController::class,'form']);
 Route::post('/Employee/store',[EmployeeController::class,'store'])->name('store.list');
-
-
-
 Route::get('/Department',[DepartmentController::class,'department']);
 Route::get('/department/list',[DepartmentController::class,'list'])->name('department.list');
 Route::get('/department/creatform',[DepartmentController::class,'creatform'])->name('department.form');
 Route::post('/department/store',[DepartmentController::class,'store'])->name('department.store');
-
-
-
-
-
 Route::get('/Designation',[DesignationController::class,'designation']);
 Route::get('/designation/list',[DesignationController::class,'list'])->name('designation.list');
 Route::post('/designation/store',[DesignationController::class,'store'])->name('designation.store');
-
-
-
-
-
-
-
-
 Route::get('/payroll',[PayrollController::class,'payroll']);
 Route::get('/payroll/list',[PayrollController::class,'list']);
 Route::post('/payroll/store',[PayrollController::class,'store'])->name('payroll.store');
-
-
-
-
-
 Route::get('/SalaryStracture',[SalarystractureController::class,'stracture']);
 Route::get('/salarystracture/form',[SalarystractureController::class,'form']);
 Route::post('/salarystracture/store',[SalarystractureController::class,'store'])->name('salary.store');
-
-
-
-
 Route::get('/Leave/list',[LeaveController::class,'list'])->name('leave.list');
+Route::get('/Leave/Type',[LeaveTypeController::class,'leavetype']);
 
 
+Route::get('/Notice',[NoticeController::class,'notice']);
+Route::get('/Attendence',[AttendenceController::class,'attendence']);
+Route::get('/Reportt',[ReportController::class,'report']);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Route::get('/Leave/Type',[LeaveTypeController::class,'leavetype']);
-
-
-// Route::get('/Notice',[NoticeController::class,'notice']);
-// Route::get('/Attendence',[AttendenceController::class,'attendence']);
-// Route::get('/Reportt',[ReportController::class,'report']);
-
-// Route::get('/role',[RoleController::class,'role'])->name('role.role');
-// Route::get('/Company/setup',[CompanysetupController::class,'setup']);
-// Route::get('/Holiday/calander',[CalanderController::class,'calander']);
+Route::get('/role',[RoleController::class,'role'])->name('role.role');
+Route::get('/Company/setup',[CompanysetupController::class,'setup']);
+Route::get('/Holiday/calander',[CalanderController::class,'calander']);
+});
 });

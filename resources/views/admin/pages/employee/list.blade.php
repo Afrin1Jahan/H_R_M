@@ -2,7 +2,7 @@
 @section('content')
 <h1>Employee</h1>
 
-<a href="{{url('/Employee/form')}}" type="button" class="btn btn-warning">Add new employee</a> 
+<a href="{{url('/Employee/form')}}" class="btn btn-warning">Add new employee</a> 
 
 <h3>Data Table Employee</h3>
 <table class="table table-striped">

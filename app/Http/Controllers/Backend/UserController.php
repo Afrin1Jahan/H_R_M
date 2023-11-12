@@ -88,14 +88,14 @@ public function store(Request $request){
     if($request->hasFile('user_image'))
     {
         $file=$request->file('user_image');
-        $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+        $fileName = date('Ymdhis').'.'.$file->getClientOriginalExtension();
        
         $file->storeAs('/uploads',$fileName);
 
     }
 
 
-
+//  dd($request->all());
 
     User::create([
         'name'=>$request->user_name,

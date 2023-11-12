@@ -32,7 +32,7 @@
 
         <div class="form-group">
             <label for="">Select Role</label>
-            <select type="text" class="form-control" id="" placeholder="enter role" name="user_role">
+            <select type="text" class="form-control" id="" placeholder="enter role" name="role">
 
                 <option value="manager">Manager</option>
                 <option value="account">Account</option>
