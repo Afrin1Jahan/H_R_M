@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            $table->string('payroll_date',100);
-            $table->string('overtime',50);
-            $table->string('bonus',50);
-            $table->string('payroll_method',50);
+            $table->string('payroll_date');
+            $table->string('overtime');
+            $table->string('bonus');
+            $table->string('payroll_method');
             $table->timestamps();
         });
     }

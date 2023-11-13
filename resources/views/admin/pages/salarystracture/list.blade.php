@@ -3,7 +3,7 @@
 
 <h1>Salarystracture Information</h1>
 
-<a href="{{url('/salarystracture/form')}}"  class="btn btn-primary">click for more</a>
+<a href="{{route('salary.form')}}"  class="btn btn-primary">click for more</a>
 
 <table class="table table-hover table-white">
   <thead>

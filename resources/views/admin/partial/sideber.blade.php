@@ -13,7 +13,7 @@
                                 Department
                             </a>
 
-                            <a class="nav-link" href="{{url('/Designation')}}">
+                            <a class="nav-link" href="{{url('/designation')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Designation
                             </a>
@@ -23,7 +23,7 @@
                                 Payroll
                             </a>
 
-                            <a class="nav-link" href="{{url('/SalaryStracture')}}">
+                            <a class="nav-link" href="{{route('salary.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Salary Stracture
                             </a>
@@ -43,7 +43,7 @@
                                 Notice
                             </a>
 
-                            <a class="nav-link" href="{{url('/Attendence')}}">
+                            <a class="nav-link" href="{{route('attendence.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Attendence
                             </a>

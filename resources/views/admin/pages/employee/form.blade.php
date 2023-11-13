@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-<form action="{{route('store.list')}}" method="post">
+<form action="{{route('employee.store')}}" method="post" enctype="multipart/form-data">
   @csrf
 
   <div class="form-row">
@@ -10,7 +10,6 @@
       <label for="inputEmail4">Enter Name</label>
       <input required type="text" name="Employee_Name" class="form-control" id="inputEmail4" placeholder="EnterName">
       @error('Employee_Name')
-
       <div class="alert alert-danger">{{$message}}</div>
       @enderror
     </div>
@@ -35,17 +34,14 @@
       @error('Employee_phone')
       <div class="alert alert-danger">{{$message}}</div>
       @enderror
-
     </div>
 
 
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Department </label>
-      <!-- <input type="number"  name="department"   class="form-control" placeholder="number"> -->
-
-      <!-- <option selected>Enter department</option> -->
-
+      <label for="inputdepertment">Department </label>
       <select class="form-select" name="department" aria-label="Default select example">
+      <option selected>Enter department</option>
+
         @foreach($departments as $department)
         <option value="1">{{$department->name}}</option>
         @endforeach
@@ -53,9 +49,9 @@
 
 
 
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">image</label>
-      <input type="file" name="Employee_image" class="form-control" placeholder="image">
+    <div class="form-group">
+      <label for="">image</label>
+      <input  name="Employee_image"  type="file" class="form-control" >
     </div>
 
 
@@ -79,19 +75,7 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     <button type="submit" class="btn btn-info">Sign in</button>
 </form>
 
-@endsection
+@endsection  

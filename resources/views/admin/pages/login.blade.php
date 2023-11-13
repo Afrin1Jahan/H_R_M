@@ -37,20 +37,15 @@
 
                                     @csrf
 
-
-
-
-
-
                                     <div class="form-outline form-white mb-4">
                                         <input required name="email" id="typeEmailX" class="form-control form-control-lg" />
                                         <label class="form-label" for="typeEmailX">Email</label>
 
                                     </div>
-                            </div>
+                            
 
                                 <div class="form-outline form-white mb-4">
-                                <input required name="password" id="typePasswordX" class="form-control form-control-lg" />
+                                <input type="password" required name="password" id="typePasswordX" class="form-control form-control-lg" />
                                 <label class="form-label" for="typePasswordX">Password</label>
 
                                 </div>

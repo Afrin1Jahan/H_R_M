@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\CompanysetupController;
 use App\Http\Controllers\Backend\CalanderController;
+use App\Http\Controllers\Backend\Homecontroller;
 use App\Http\Controllers\Backend\PayrollController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\SalarystractureController;
@@ -52,34 +53,56 @@ Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('adm
 Route::group(['middleware' => 'auth'], function () {
 
 
-
 Route::get('/logout',[UserController::class, 'logout'])->name('admin.logout');
-Route::get('/',[HomeController::class,'Home'])->name('dashboard');
+Route::get('/',[Homecontroller::class,'Home'])->name('dashboard');
+
+
 Route::get('/users',[UserController::class, 'list'])->name('users.list');
 Route::get('/users/create',[UserController::class,'createFrom'])->name('users.create');
 Route::post('/users/store',[UserController::class,'store'])->name('users.store');
+
 Route::get('/Employee',[EmployeeController::class,'employee'])->name('employee.name');
-Route::get('/Employee/form',[EmployeeController::class,'form']);
-Route::post('/Employee/store',[EmployeeController::class,'store'])->name('store.list');
+Route::get('/Employee/form',[EmployeeController::class,'form'])->name('employee.form');
+Route::post('/Employee/store',[EmployeeController::class,'store'])->name('employee.store');
+
 Route::get('/Department',[DepartmentController::class,'department']);
 Route::get('/department/list',[DepartmentController::class,'list'])->name('department.list');
 Route::get('/department/creatform',[DepartmentController::class,'creatform'])->name('department.form');
 Route::post('/department/store',[DepartmentController::class,'store'])->name('department.store');
-Route::get('/Designation',[DesignationController::class,'designation']);
+
+
+Route::get('/designation',[DesignationController::class,'designation']);
 Route::get('/designation/list',[DesignationController::class,'list'])->name('designation.list');
+Route::get('/designation/creatform',[DesignationController::class,'creatform'])->name('designation.form');
 Route::post('/designation/store',[DesignationController::class,'store'])->name('designation.store');
+
+
+Route::get('/attendence/list',[AttendenceController::class,'list'])->name('attendence.list');
+Route::get('/attendence/creatform',[AttendenceController::class,'form'])->name('attendence.form');
+Route::post('/attendence/store',[AttendenceController::class,'store'])->name('attendence.store');
+
+
+
+
+
+
+
 Route::get('/payroll',[PayrollController::class,'payroll']);
 Route::get('/payroll/list',[PayrollController::class,'list']);
 Route::post('/payroll/store',[PayrollController::class,'store'])->name('payroll.store');
-Route::get('/SalaryStracture',[SalarystractureController::class,'stracture']);
-Route::get('/salarystracture/form',[SalarystractureController::class,'form']);
+
+
+Route::get('/SalaryStracture',[SalarystractureController::class,'list'])->name('salary.list');
+Route::get('/salarystracture/form',[SalarystractureController::class,'form'])->name('salary.form');
 Route::post('/salarystracture/store',[SalarystractureController::class,'store'])->name('salary.store');
+
+
 Route::get('/Leave/list',[LeaveController::class,'list'])->name('leave.list');
 Route::get('/Leave/Type',[LeaveTypeController::class,'leavetype']);
 
 
 Route::get('/Notice',[NoticeController::class,'notice']);
-Route::get('/Attendence',[AttendenceController::class,'attendence']);
+
 Route::get('/Reportt',[ReportController::class,'report']);
 
 Route::get('/role',[RoleController::class,'role'])->name('role.role');

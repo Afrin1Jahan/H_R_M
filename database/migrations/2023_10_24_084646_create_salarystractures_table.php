@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('salarystractures', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100)->unique();
+            $table->string('name')->unique();
             $table->text('description')->nullable();
-            $table->string('amount',10);
-            $table->text('status',100)->nullable();
+            $table->string('amount');
+            $table->text('status')->nullable();
             $table->string('type');
 
             $table->timestamps();

@@ -29,23 +29,32 @@ class EmployeeController extends Controller
 
 public function store(Request $request){
 
+
+
     $validate=validator::make($request->all(),[
 
         'Employee_Name'=>'required',
-       ' Employee_Email'=>'required',
-       'Employee_phone'=>'required|numeric|min:5'
+        'Employee_Email'=>'required',
+        'Employee_phone'=>'required|numeric|min:5'
     ]);
 
     if($validate->fails()){
 
-        // dd($validate->getMessageBag());
         return redirect()->back()->withErrors($validate);
+
     }
 
+    $fileName=null;
+    if($request->hasFile('Employee_image'))
+    {
+     $file=$request->file('Employee_image');
+     $fileName = date('Ymdhis').'.'.$file->getClientOriginalExtension();
+     $file->storeAs('/uploads',$fileName);
+    }
 
+    // dd($request->all());
 
-
-    // dd($request-> all());
+   
     Employee::create ([
         'department'=>$request->department,
         'name'=>$request->Employee_Name,

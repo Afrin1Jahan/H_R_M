@@ -8,7 +8,15 @@ use Illuminate\Http\Request;
 
 class AttendenceController extends Controller
 {
-    public function attendence(){
-        return view("admin.pages.attendence.attendence");
+    public function list(){
+        return view("admin.pages.attendence.list");
     }
+
+
+
+public function form (){
+    return view('admin.pages.attendence.form');
+    }
+
+
 }

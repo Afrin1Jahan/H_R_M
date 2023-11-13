@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('designations', function (Blueprint $table) {
             $table->id();
-            $table->string('title',50);
-            $table->string('description',100);
-            $table->string('date',15);
-            $table->string('status',100);
+            $table->string('title');
+            $table->string('description');
+            $table->string('date');
+            $table->string('status');
 
             $table->timestamps();
         });

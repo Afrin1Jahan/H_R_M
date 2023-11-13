@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class SalarystractureController extends Controller
 {
-    public function stracture(){
+    public function list(){
 
 
         $salarystractures= salarystracture::paginate(5);
@@ -40,6 +40,8 @@ class SalarystractureController extends Controller
 
 
         ]);
+
+        notify()->success('your data has been stored!');
 
         return redirect()->back();
 

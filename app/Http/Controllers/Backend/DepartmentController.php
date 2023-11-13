@@ -12,7 +12,7 @@ class DepartmentController extends Controller
 {
     public function list(){
 
-        $departments=Department::all();
+        $departments=Department::paginate(5);   
        return view('admin.pages.department.list',compact('departments'));
     //    dd('habijabi');
     }

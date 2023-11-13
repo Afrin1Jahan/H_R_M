@@ -16,14 +16,15 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             // $table->interger('department_id');
-            $table->string('name',100)->unique();
-            $table->string('status',12)->default('active');
-            $table->string('phone',15)->unique();
-            $table->string('email',100)->unique();
+            $table->string('name')->unique();
+            $table->string('status')->default('active');
+            $table->string('phone')->unique();
+            $table->string('department')->nullable();
+            $table->string('email')->unique();
             $table->text('image')->nullable();
-            $table->string('shift',10)->nullable();
-            $table->string('dob',15);
-            $table->string('gender',6);
+            $table->string('shift')->nullable();
+            $table->string('dob');
+            $table->string('gender');
             $table->timestamps();
         });
     }

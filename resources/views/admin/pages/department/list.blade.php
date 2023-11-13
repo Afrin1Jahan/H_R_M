@@ -45,6 +45,6 @@
   
   </tbody>
 </table> 
-
+{{$departments->links()}}
 
 @endsection
