@@ -7,8 +7,8 @@
   <div class="form-row">
 
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Enter Name</label>
-      <input required type="text" name="Employee_Name" class="form-control" id="inputEmail4" placeholder="EnterName">
+      <label for="inputName">Enter Name</label>
+      <input required type="text" name="Employee_Name" class="form-control" id="" placeholder="EnterName">
       @error('Employee_Name')
       <div class="alert alert-danger">{{$message}}</div>
       @enderror
@@ -29,8 +29,8 @@
 
 
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Phone</label>
-      <input required type="phone" name="Employee_phone" class="form-control" id="inputEmail4" placeholder="Enter phone">
+      <label for="inputNumber">Phone</label>
+      <input required type="number" name="Employee_phone" class="form-control" id="number" placeholder="Enter phone">
       @error('Employee_phone')
       <div class="alert alert-danger">{{$message}}</div>
       @enderror
@@ -56,7 +56,7 @@
 
 
     <div class="form-group col-md-6">
-      <label for="inputEmail4">shift</label>
+      <label for="inputEma">shift</label>
       <input type="text" name="Employee_shift" class="form-control" id="inputEmail4" placeholder="Enter shift">
     </div>
 

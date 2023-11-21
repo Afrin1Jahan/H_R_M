@@ -19,6 +19,18 @@
 </div>
 
 
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">employee_id</label>
+      <input type="text" class="form-control" name="employee_id" id="inputEmail4" placeholder="number">
+
+      @error('employee_id')
+      <div class="alert alert-danger">{{$messege}}</div>
+      @enderror
+
+</div>
+
+
     <div class="form-group col-md-6">
       <label for="inputPassword4">Description</label>
       <input type="textarea" class="form-control" name="designation_description" id="inputPassword4" placeholder="Password">

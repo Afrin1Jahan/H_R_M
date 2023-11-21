@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\User;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -16,7 +17,55 @@ class UserController extends Controller
     }
 
 
-    public function loginPost(Request $request)
+
+Public function profile(){
+
+    return view('admin.pages.backend profile.profile');
+
+}
+
+
+Public function profileedit(){
+   
+    return view('admin.pages.backend profile.edit');
+}
+
+public function profileupdate(Request $request){
+    // dd($request->all());
+
+    $validate= Validator::make($request->all(),[
+
+       'name'=> 'required',
+       'email'=>'required',
+       'role'=>'required'
+     ]);
+
+     if($validate->fails()){
+     notify()->error('please make it correct');
+     return redirect()->back();
+     } else{
+   
+ 
+      
+    $user=user::find(auth()->user()->id);
+    if($user){
+
+$user->update([
+ 'name'=>$request->name,
+ 'role'=>$request->role,
+ 'email'=>$request->email
+
+]);
+
+notify()->success('updated successfully');
+return redirect()->back();
+ }
+
+     
+}}
+
+    
+ public function loginPost(Request $request)
     {
 
 

@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Validator;
 class DesignationController extends Controller
 {
     public function designation (){
-
+        // dd('hi');
         $designations= Designation::all();
+        
         return view("admin.pages.designation.list",compact('designations'));
     }
 
@@ -39,7 +40,8 @@ public function store(Request $request){
         'title'=>$request->designation_title,
         'description'=>$request->designation_description,
         'date'=>$request->designation_date,
-        'status'=>$request->designation_status
+        'status'=>$request->designation_status,
+        'employee_id'=>$request->employee_id
     
     ]);
         

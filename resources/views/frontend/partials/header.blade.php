@@ -15,38 +15,15 @@
 
             <ul class="sf-menu templateux-menu d-none d-md-block">
               <li class="active">
-                <a href="index.html" class="animsition-link">Home</a>
+             <!-- <a href="{{route('customer.login')}}" class="animsition-link">Login</a> -->
               </li>
-              <li><a href="about.html" class="animsition-link">About</a></li>
-              <li>
-                <a href="services.html" class="animsition-link">Services</a>
-                <ul>
-                  <li><a href="#">HR Consulting</a></li>
-                  <li><a href="#">Leadership Training</a></li>
-                  <li>
-                    <a href="#">HR Management</a>
-                    <ul>
-                      <li><a href="#">Operational Management</a></li>
-                      <li><a href="#">Corporate Program</a></li>
-                      <li>
-                        <a href="#">Service 3</a>
-                        <ul>
-                          <li><a href="#">Service 1</a></li>
-                          <li><a href="#">Service 2</a></li>
-                          <li><a href="#">Service 3</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+
+              <span style="padding: 5px;">|</span>
+
+              <li class="active">
+              <!-- <a href="{{route('customer.registration')}}" class="animsition-link">Registration</a> -->
               </li>
-              <li><a href="blog.html" class="animsition-link">Blog</a></li>
-              <li><a href="contact.html" class="animsition-link">Contact</a></li>
-            </ul> <!-- .templateux-menu -->
-
-          </nav> <!-- .site-nav -->
-          
-
-        </div> <!-- .row -->
+              
+                 </div> <!-- .row -->
       </div> <!-- .container -->
     </header> <!-- .templateux-navba -->

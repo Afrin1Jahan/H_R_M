@@ -21,7 +21,7 @@
         <td>{{$key+1}}</td>
         <td>{{$singleUser->name}}</td>
         <td>
-            <img style="border-radius: 60px;" width="7%" src="{{url('/uploads/'.$singleUser->image)}}" alt="">
+            <img style="border-radius: 60px;" width="50%" src="{{url('/uploads/'.$singleUser->image)}}" alt="">
         </td>
         <td>{{$singleUser->email}}</td>
         <td>{{$singleUser->role}}</td>

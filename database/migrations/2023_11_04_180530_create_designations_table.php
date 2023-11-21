@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('date');
             $table->string('status');
+            $table->string('employee_id');
 
             $table->timestamps();
         });

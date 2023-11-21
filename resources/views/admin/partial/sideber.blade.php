@@ -13,7 +13,7 @@
                                 Department
                             </a>
 
-                            <a class="nav-link" href="{{url('/designation')}}">
+                            <a class="nav-link" href="{{route('des')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Designation
                             </a>

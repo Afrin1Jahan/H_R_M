@@ -18,7 +18,10 @@
                         <!-- <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li> -->
-                        <li><a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a></li>
+
+
+                        <a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a></li> 
+                       <li> <a href="{{route('profile.view')}}">{{auth()->user()->name}} ({{ auth()->user()->role }})</a></li>
                     </ul>
                 </li>
             </ul>

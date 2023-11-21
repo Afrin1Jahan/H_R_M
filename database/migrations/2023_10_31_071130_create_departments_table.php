@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('no');
             $table->text('location');
+            $table->text('employee_id');
 
             $table->timestamps();
         });

@@ -13,10 +13,8 @@ class EmployeeController extends Controller
 {
     public function employee(){
 
-
-        $employees=Employee::with(['department','designation']);
-     
-
+        $employees=Employee::with(['department','designation'])->get();
+        
         return view("admin.pages.employee.list",compact('employees'));
     }
 
@@ -63,7 +61,7 @@ public function store(Request $request){
         'shift'=>$request->Employee_shift,
         'dob'=>$request->Employee_dob,
         'gender'=>$request->Employee_gender,
-        'image'=>$request->Employee_image
+        'image'=>$fileName
 
     ]);
    

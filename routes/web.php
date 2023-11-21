@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\Homecontroller as FrontendHomeController;
+use App\Http\Controllers\Frontend\CustomerController;
+
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\DesignationController;
@@ -18,9 +20,8 @@ use App\Http\Controllers\Backend\Homecontroller;
 use App\Http\Controllers\Backend\PayrollController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\SalarystractureController;
-
-
-
+use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,13 @@ use App\Http\Controllers\Backend\SalarystractureController;
 
 Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
 
+// Route::get('/registration',[CustomerController::class,'registration'])->name('customer.registration');
+
+// Route::post('/registration',[CustomerController::class, 'store'])->name('customer.store');
+// Route::get('/login',[CustomerController::class, 'login'])->name('customer.login');
+// Route::post('/login',[CustomerController::class,'doLogin'])->name('customer.do.login');
+
+
 
 //all admin panel routs
 
@@ -47,12 +55,22 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 Route::get('/login',[UserController::class,'loginFrom'])->name('admin.login');
+
+
 Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('admin.login.post');
 
 
 Route::group(['middleware' => 'auth'], function () {
 
 
+
+    // Route::group(['middleware => '])
+
+    
+
+ Route::get('/profile', [UserController::class, 'profile'])->name('profile.view');
+ Route::get('/profile/edit/',[UserController::class,'profileedit'])->name('profile.edit');
+ Route::put('/profile/update',[UserController::class,'profileupdate'])->name('profile.update');
 Route::get('/logout',[UserController::class, 'logout'])->name('admin.logout');
 Route::get('/',[Homecontroller::class,'Home'])->name('dashboard');
 
@@ -67,11 +85,20 @@ Route::post('/Employee/store',[EmployeeController::class,'store'])->name('employ
 
 Route::get('/Department',[DepartmentController::class,'department']);
 Route::get('/department/list',[DepartmentController::class,'list'])->name('department.list');
+
+
+Route::get('/department/delete/{id}',[DepartmentController::class, 'delete'])->name('department.delete');
+
+Route::get('/department/edit/{id}',[DepartmentController::class,'edit'])->name('department.edit');
+
+Route::put('/department/update/{id}',[DepartmentController::class,'update'])->name('department.update');
+
+
 Route::get('/department/creatform',[DepartmentController::class,'creatform'])->name('department.form');
 Route::post('/department/store',[DepartmentController::class,'store'])->name('department.store');
 
 
-Route::get('/designation',[DesignationController::class,'designation']);
+Route::get('/designation',[DesignationController::class,'designation'])->name('des');
 Route::get('/designation/list',[DesignationController::class,'list'])->name('designation.list');
 Route::get('/designation/creatform',[DesignationController::class,'creatform'])->name('designation.form');
 Route::post('/designation/store',[DesignationController::class,'store'])->name('designation.store');
