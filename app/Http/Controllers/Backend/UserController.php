@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
+use App\Models\Department;
+use App\Models\Designation;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -101,21 +104,22 @@ return redirect()->back();
     public function list(){
 
         
-
-        $users= User::all();
+     
+        $users= User::paginate(5);
         return view('admin.pages.users.list',compact('users'));
     }
 
 public function createFrom(){
 
-
-    return view('admin.pages.users.create');
+    $departments = Department::all();
+    $desigantions = Designation::all();
+    return view('admin.pages.users.create',compact('departments','desigantions'));
 }
 
 
 public function store(Request $request){
-
-    // dd($request);
+//  dd($request->all());
+    
     $validate=Validator::make($request->all(),[
         'user_name'=>'required',
         'role'=>'required',
@@ -146,12 +150,14 @@ public function store(Request $request){
 
 //  dd($request->all());
 
-    User::create([
+    user::create([
         'name'=>$request->user_name,
         'role'=>$request->role,
         'image'=>$fileName,
         'email'=>$request->user_email,
         'password'=>bcrypt($request->user_password),
+        'Department'=>$request->Department,
+        'Designation'=>$request->Designation,
     ]);
 
     return redirect()->back()->with('message','User created successfully.');

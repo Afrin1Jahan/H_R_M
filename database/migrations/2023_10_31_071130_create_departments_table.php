@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->string('no');
-            $table->text('location');
-            $table->text('employee_id');
+            $table->string('Name');
+            $table->text('Description');
+            $table->string('No');
+            $table->text('Location');
+            // $table->text('employee_id');
 
             $table->timestamps();
         });

@@ -8,30 +8,30 @@
   <thead>
   <tr>
       
-      <th scope="col">ID</th>
+      <th scope="col">Id</th>
       <th scope="col">Title</th>
       <th scope="col">Description</th>
       <th scope="col">Date</th>
-      <th scope="col">Status</th>
+      <!-- <th scope="col">Status</th> -->
     
     </tr>
   </thead>
   <tbody>
  
-  @foreach($designations as $designation)
+  @foreach($designations as $key=>$designation)
 
   <tr>
-  <td>{{$designation->id}}</td>
+  <th scope="row">{{$key+1}}</th>
   <td>{{$designation->title}}</td> 
   <td>{{$designation->description}}</td> 
   <td>{{$designation->date}}</td> 
-  <td>{{$designation->status}}</td>
+<!--   
   <td>
       
       <a class="btn btn-success" href="">Edit</a>
       <a class="btn btn-danger" href="">Delete</a> 
     
-    </td>
+    </td> -->
 
 </tr>
       

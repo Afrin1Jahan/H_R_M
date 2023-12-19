@@ -1,75 +1,36 @@
-<footer class="templateux-footer bg-light">
-  <div class="container">
 
-    <div class="row mb-5">
-      <div class="col-md-4 pr-md-5">
-        <div class="block-footer-widget">
-          <h3>About</h3>
-          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+
+<section class="footer1 cid-s1YPqSpOCZ" once="footers" id="footer1-7">
+    
+    
+    <div class="container">
+        <div class="row mbr-white justify-content-center">
+            <div class="col-12 col-lg-6 col-md-6">
+                <p class="mbr-text1 align-left mbr-fonts-style align-left display-7">Lorem ipsum dolor sit amet consectetur adipisicing tempor.</p>
+            </div>
+            <div class="col-12 col-lg-6 col-md-6">
+                <p class="mbr-text2 align-right mbr-fonts-style align-left display-7">© 2020 SolutionM4 Theme by <a href="#" class="text-secondary">Mobirise</a></p>
+            </div>
         </div>
-      </div>
-
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="block-footer-widget">
-              <h3>Learn More</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">How it works?</a></li>
-                <li><a href="#">Useful Tools</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Sitemap</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="block-footer-widget">
-              <h3>Support</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Help Desk</a></li>
-                <li><a href="#">Knowledgebase</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="block-footer-widget">
-              <h3>About Us</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="block-footer-widget">
-              <h3>Connect With Us</h3>
-              <ul class="list-unstyled block-social">
-                <li><a href="#" class="p-1"><span class="icon-facebook-square"></span></a></li>
-                <li><a href="#" class="p-1"><span class="icon-twitter"></span></a></li>
-                <li><a href="#" class="p-1"><span class="icon-github"></span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div> <!-- .row -->
-
-      </div>
-    </div> <!-- .row -->
-
-    <div class="row pt-5 text-center">
-      <div class="col-md-12 text-center"><p>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="text-danger icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      </p></div>
-    </div> <!-- .row -->
-
-  </div>
-</footer> <!-- .templateux-footer -->
+    </div>
+</section>
 
 
-</div> <!-- .js-animsition -->
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/popper/popper.min.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/tether/tether.min.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/parallax/jarallax.min.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/playervimeo/vimeo_player.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/formstyler/jquery.formstyler.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/formstyler/jquery.formstyler.min.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/datepicker/jquery.datetimepicker.full.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/theme/js/script.js"></script>
+  <script src="https://mobirise.com/extensions/solutionm4/marketingsolution/assets/formoid/formoid.min.js"></script>
+  
+

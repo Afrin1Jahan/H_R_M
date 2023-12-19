@@ -8,45 +8,37 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
+
       <th scope="col">id</th>
-      <!-- <th scope="col">Department id</th> -->
-      <th scope="col">name</th>
-      <th scope="col">shift</th>
-      <th scope="col">gender</th>
-      <th scope="col">image</th>
-      <th scope="col">dob</th>
-      <th scope="col">action</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Image</th>
+      <th scope="col">Department</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
 
-    @foreach ($employees as $employee)
+    @foreach ($employees as $key=> $employee)
 
     <tr>
-      <th scope="row">#</th>
-      <th> {{$employee->id}}</th>
-      <!-- <th> {{$employee->department_id}}</th> -->
+      <th scope="row">{{$key+1, }}</th>
+
       <td>{{$employee->name}}</td>
-      <td>{{$employee-> shift}}</td>
-      <td>{{$employee-> gender}}</td>
-      <td>{{$employee->image}}</td>
-      <td>{{$employee->dob}}</td>
-      <td>{{$employee->action}}</td>
+      <td>{{$employee->email}}</td>
+     <td>
+        <img style="border-radius: 60px;" width="7%" src="{url('/uploads/',$employee->Employee_image)}}" alt="No Image">
+      </td> 
 
-
-      <td>
-        <img style="border-radius: 60px;" width="7%" src="{{url('/uploads/'.$employee->image)}}" alt="">
-      </td>
-
-
-      <td>{{$employee-> dob}}</td>
+      <td>{{$employee->Department}}</td>
+      <td>{{$employee->Designation}}</td>
 
       <td>
 
         <a class="btn btn-success" href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
-
+        <a class="btn btn-danger" href="{{route('Employee.delete',$employee->id)}}">Delete</a>
+        <a href="{{route('payroll.form')}}" class="btn btn-danger">Create Payroll</a>
       </td>
 
     </tr>

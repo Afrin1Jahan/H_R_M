@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-<h5>Create new User</h5>
+
 
 
 
@@ -19,32 +19,35 @@
 
 
 @csrf
-    <div class="form-group">
+<div class="form-row">
+    <div class="col-md-4 mb-3">
         <label for="">Enter User Name:</label>
         <input required type="text" class="form-control" id="" placeholder="Enter name" name="user_name">
         @error('user_name')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+</div>
 
 
 
-
-        <div class="form-group">
+<div class="form-row">
+    <div class="col-md-4 mb-3">
             <label for="">Select Role</label>
             <select type="text" class="form-control" id="" placeholder="enter role" name="role">
 
-                <option value="manager">Manager</option>
-                <option value="account">Account</option>
-                <option value="GM">GM</option>
-
+                <option value="Employee">Employee</option>
+                <option value="admin">Admin</option>
+               
             </select>
 
         </div>
+</div>
 
 
-        <div class="form-group">
-            <label for="">Enter Email: </label>
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+            <label for="">Enter Email</label>
             <input required type="email" class="form-control" placeholder="Enter Email" name="user_email">
 
             @error('user_email')
@@ -52,11 +55,13 @@
             @enderror
 
         </div>
+</div>
 
 
 
-        <div class="form-group">
-            <label for="">Enter Password: </label>
+       
+ <div class="form-row">
+    <div class="col-md-4 mb-3">     <label for="">Enter Password: </label>
             <input required type="password" class="form-control" placeholder="Enter password" name="user_password">
 
             @error('user_password')
@@ -64,17 +69,43 @@
             @enderror
 
         </div>
+ </div>
 
-
-
-        <div class="form-group">
-            <label for="">Upload Image: </label>
+ <div class="form-row">
+    <div class="col-md-4 mb-3">
+            <label for="">Upload Image</label>
             <input name="user_image" type="file" class="form-control">
         </div>
+</div>
+     
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="">Department</label>
+
+      <select class="form-control" id=""  placeholder="Enter department" name="Department" >
+      @foreach ( $departments as $dept)
+      <option value="{{$dept->id}}">{{$dept->Name}}</option>
+       @endforeach
+      </select>
+      <!-- <input  type name="Department"  class="form-control"  placeholder="Enter department" name="Department"  > -->
+     
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="">Designation</label>
+
+      <select class="form-control" id=""  placeholder="Enter designation" name="Designation" >
+      @foreach (  $desigantions as $desi)
+      <option value="{{$desi->id}}">{{$desi->title}}</option>
+       @endforeach
+      </select>  
+      <!-- <input  type name="Designation"   class="form-control"  placeholder="Enter designation" name="Designation"   > -->
+      
+    </div>
 
 
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn-info bg-info btn-primary">Submit</button>
 </form>
 
 @endsection

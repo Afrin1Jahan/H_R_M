@@ -1,29 +1,34 @@
-<header class="templateux-navbar" role="banner">
+  <section class="menu cid-s1YNw91RvB" once="menu" id="menu1-1">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg w-100">
+        <div class="container">
+           
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">
+                            About</a></li>
 
-      <div class="container"  data-aos="fade-down">
-        <div class="row">
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">Features</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">Pricing</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com">Contacts</a></li></ul>
+                <div class="icons-menu">
+                    <a href="https://mobirise.com" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
+                    </a>
+                    <a href="https://mobirise.com" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-skype socicon"></span>
+                    </a>
+                    <a href="https://mobirise.com" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-vimeo socicon"></span>
+                    </a>
+                    
+                    
+                    
+                </div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary-outline display-4" href="https://mobirise.com"><span class="mobi-mbri mobi-mbri-rocket mbr-iconfont mbr-iconfont-btn"></span>GET STARTED</a></div>
+            </div>
+        </div>
+    </nav>
+</section>
 
-          <div class="col-3 templateux-logo">
-            <a href="index.html" class="animsition-link">HumanResources</a>
-          </div>
-          <nav class="col-9 site-nav">
-            <button class="d-block d-md-none hamburger hamburger--spin templateux-toggle templateux-toggle-light ml-auto templateux-toggle-menu" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </button> <!-- .templateux-toggle -->
 
-            <ul class="sf-menu templateux-menu d-none d-md-block">
-              <li class="active">
-             <!-- <a href="{{route('customer.login')}}" class="animsition-link">Login</a> -->
-              </li>
-
-              <span style="padding: 5px;">|</span>
-
-              <li class="active">
-              <!-- <a href="{{route('customer.registration')}}" class="animsition-link">Registration</a> -->
-              </li>
-              
-                 </div> <!-- .row -->
-      </div> <!-- .container -->
-    </header> <!-- .templateux-navba -->

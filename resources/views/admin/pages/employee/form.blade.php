@@ -15,67 +15,60 @@
     </div>
 
 
-
+   
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
       <input required type="Email" name="Employee_Email" class="form-control" id="inputEmail4" placeholder="Enter e-mail">
+    
       @error('Employee_Email')
       <div class="alert alert-danger">{{$message}}</div>
       @enderror
 
-    </div>
+    </div> 
 
 
+ <div class="form-group col-md-6">
+            <label for="">Select Role</label>
+            <select type="text" class="form-control" id="" placeholder="enter role" name="role">
 
+                <option value="Employee">Employee</option>
+                <option value="admin">Admin</option>
+               
+            </select>
 
-    <div class="form-group col-md-6">
-      <label for="inputNumber">Phone</label>
-      <input required type="number" name="Employee_phone" class="form-control" id="number" placeholder="Enter phone">
-      @error('Employee_phone')
-      <div class="alert alert-danger">{{$message}}</div>
-      @enderror
-    </div>
+        </div> 
 
+        <div class="form-group col-md-6">
+            <label for="">Enter Password: </label>
+            <input required type="password" class="form-control" placeholder="Enter password" name="user_password">
 
-    <div class="form-group col-md-6">
-      <label for="inputdepertment">Department </label>
-      <select class="form-select" name="department" aria-label="Default select example">
-      <option selected>Enter department</option>
+            @error('user_password')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
 
-        @foreach($departments as $department)
-        <option value="1">{{$department->name}}</option>
-        @endforeach
-    </div>
+        </div>
 
-
-
-    <div class="form-group">
+<div class="form-group col-md-6">
       <label for="">image</label>
       <input  name="Employee_image"  type="file" class="form-control" >
+      </div>
+
+   
+     <div class="form-group col-md-6">
+      <label for="">Department</label>
+      <input  type="text"  class="form-control"  placeholder="Enter department" name="Department"  >
+     
     </div>
-
-
+    
+    
     <div class="form-group col-md-6">
-      <label for="inputEma">shift</label>
-      <input type="text" name="Employee_shift" class="form-control" id="inputEmail4" placeholder="Enter shift">
+      <label for="">Designation</label>
+      <input type="text"   class="form-control"  placeholder="Enter designation" name="Designation"  >
+      
     </div>
-
-
-
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">dob</label>
-      <input type="text" name="Employee_dob" class="form-control" id="inputEmail4" placeholder="Enter_dob
-    ">
-    </div>
-
-
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">gender</label>
-      <input type="text" name="Employee_gender" class="form-control" id="inputEmail4" placeholder="Enter gender">
-    </div>
-
-
-    <button type="submit" class="btn btn-info">Sign in</button>
+    
+    
+<button type ="submit" class="btn-info bg-info btn-primary">Submit</button> </div>
 </form>
 
 @endsection  

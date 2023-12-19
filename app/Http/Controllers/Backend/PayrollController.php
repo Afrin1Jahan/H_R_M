@@ -4,24 +4,26 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\payroll;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use OutOfBoundsException;
 
 class PayrollController extends Controller
 {
-    public function payroll(){
+    public function list(){
 
-        
-        return view("admin.pages.payroll.list");
+        $payrolls = Payroll::all();
+        return view("admin.pages.payroll.list",compact('payrolls'));
 
     }
 
 
 
-    public function list(){
-
+    public function form(){
+    //    dd('hi');
         // $payrolls =payroll::all();
-        return view("admin.pages.payroll.form");
+        $employees = Employee::all();
+        return view("admin.pages.payroll.form",compact('employees'));
     }
 
 
@@ -32,11 +34,14 @@ class PayrollController extends Controller
      payroll::create([
     
 
-     "payroll_date"=>$request->payroll_date,
-     "overtime"=>$request->overtime,
-     "bonus"=>$request->bonus,
-     "payroll_method"=>$request->payroll_method,
-
+     "Employee"=>$request->employee,
+     "Month"=>$request->month,
+     "Year"=>$request->year,
+     "Paysalary"=>$request->paysalary,
+     "Monthlysalary"=>$request->monthlysalary,
+     "Deductionammount"=>$request->deductionsalary,
+     "Bonusammount"=>$request->bonusammount,
+    
      ]);
 
      return redirect()->back();

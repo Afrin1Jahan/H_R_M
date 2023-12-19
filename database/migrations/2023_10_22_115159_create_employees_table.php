@@ -17,14 +17,12 @@ return new class extends Migration
             $table->id();
             // $table->interger('department_id');
             $table->string('name')->unique();
-            $table->string('status')->default('active');
-            $table->string('phone')->unique();
-            $table->string('department')->nullable();
             $table->string('email')->unique();
             $table->text('image')->nullable();
-            $table->string('shift')->nullable();
-            $table->string('dob');
-            $table->string('gender');
+            $table->text('role');
+            $table->string('password');
+            $table->string('Department');
+            $table->string('Designation');
             $table->timestamps();
         });
     }

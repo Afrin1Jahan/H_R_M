@@ -29,7 +29,7 @@
 
 
     <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      <button type="submit" class="btn-info bg-info btn-primary">Submit</button>
     </div>
 
 

@@ -22,6 +22,7 @@
 
                         <a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a></li> 
                        <li> <a href="{{route('profile.view')}}">{{auth()->user()->name}} ({{ auth()->user()->role }})</a></li>
+                        <p class="text-muted mb-4">{{auth()->user()->email}}</p>
                     </ul>
                 </li>
             </ul>

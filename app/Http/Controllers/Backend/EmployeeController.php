@@ -6,14 +6,21 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Department;
 use App\Models\Employee;
+use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class EmployeeController extends Controller
 {
     public function employee(){
+        // dd('hi');
+        //  $employees=user::all();
+        // $employees=user::all();
+        // $departments = Department::all();
+        $employees = User::where('role', '=', 'Employee')->get();
+        // dd($employees->toarray());
 
-        $employees=Employee::with(['department','designation'])->get();
+         //with(['department','designation'])->get();
         
         return view("admin.pages.employee.list",compact('employees'));
     }
@@ -22,6 +29,18 @@ class EmployeeController extends Controller
 
         $departments= department::all();
         return view("admin.pages.employee.form",compact('departments'));
+    }
+
+    public function delete($id)
+    {
+      $employees=Employee::find($id);
+      if($employees)
+      {
+        $employees->delete();
+      }
+
+      notify()->success('Deleted Successfully.');
+      return redirect()->back();
     }
 
 
@@ -33,7 +52,7 @@ public function store(Request $request){
 
         'Employee_Name'=>'required',
         'Employee_Email'=>'required',
-        'Employee_phone'=>'required|numeric|min:5'
+      
     ]);
 
     if($validate->fails()){
@@ -50,23 +69,31 @@ public function store(Request $request){
      $file->storeAs('/uploads',$fileName);
     }
 
-    // dd($request->all());
+    //  dd($request->all());
 
    
-    Employee::create ([
-        'department'=>$request->department,
+    User::create ([
+     
         'name'=>$request->Employee_Name,
         'email'=>$request->Employee_Email,
-        'phone' =>$request->Employee_phone,
-        'shift'=>$request->Employee_shift,
-        'dob'=>$request->Employee_dob,
-        'gender'=>$request->Employee_gender,
+        'role'=>$request->role,
+        'password'=>bcrypt($request->user_password),
+  
         'image'=>$fileName
 
     ]);
-   
+  
+   Employee::create([
+         'name'=>$request->Employee_Name,
+        'email'=>$request->Employee_Email,
+        'role'=>$request->role,
+        'password'=>bcrypt($request->user_password),
+        'Department'=>$request->Department,
+        'Designation'=>$request->Designation,
+        'image'=>$fileName
+   ]);
 
     notify()->success('your data has been stored!');
-    return redirect()->back();
+    return redirect()->route('employee.name');
 }
 }

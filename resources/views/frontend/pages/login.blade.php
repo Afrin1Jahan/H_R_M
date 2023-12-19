@@ -8,7 +8,8 @@
 
 @section('content')
 
-<form action="{{route('customer.do.login')}}" method="post">
+<form action="{{route('admin.login.post')}}" method="post">
+
     @csrf
 
 

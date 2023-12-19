@@ -43,7 +43,7 @@ class SalarystractureController extends Controller
 
         notify()->success('your data has been stored!');
 
-        return redirect()->back();
+        return redirect()->route('salary.list');
 
     }
 }

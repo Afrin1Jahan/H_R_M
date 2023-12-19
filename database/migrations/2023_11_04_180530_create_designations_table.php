@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('designations', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->string('date');
-            $table->string('status');
-            $table->string('employee_id');
+          
 
             $table->timestamps();
         });

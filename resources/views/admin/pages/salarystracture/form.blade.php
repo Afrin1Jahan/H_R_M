@@ -10,16 +10,21 @@
       <input type="text" name="salary_name" class="form-control" id="inputname" placeholder="EnterName">
     </div>
 
-
     <div class="form-group col-md-6">
       <label for="inputtextarea">description</label>
       <textarea name="inputtextarea" name="salary_description" class="form-control" id="inputdescription" cols="80" rows="5"></textarea>
     </div>
 
 
+
+
+
+    
+
+
     <div class="form-group col-md-6">
       <label for="inputEmail4">amount</label>
-      <input type="text" name="salary_amount" class="form-control" id="inputamount" placeholder="EnterAmmount">
+      <input type="number" name="salary_amount" class="form-control" id="inputamount" placeholder="EnterAmmount">
     </div>
 
 
@@ -35,6 +40,7 @@
 
       <select class="form-select" name="salary_type" aria-label="Default select example">
         <option selected>Employee salary type</option>
+        
         @foreach($employees as $employee)
         <option value="1">{{$employee->name}}</option>
         @endforeach
@@ -45,7 +51,7 @@
     </div>
 
     <!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
-    <button type="Submit" class="btn btn-success">Sign in</button>
+    <button type="Submit" class="btn-info bg-info btn-primary">Sign in</button>
 
 </form>
 </div>

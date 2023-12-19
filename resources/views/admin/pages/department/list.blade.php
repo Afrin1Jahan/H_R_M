@@ -8,12 +8,12 @@
 <table class="table table-hover">
   <thead>
   <tr>
-      <th scope="col">#</th>
+      <th scope="col">id</th>
       <!-- <th scope="col">id</th> -->
-      <th scope="col">name</th>
-      <th scope="col">description</th>
-      <th scope="col">no</th>
-      <th scope="col">location</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">No</th>
+      <th scope="col">Location</th>
       
       <th scope="col">Action</th>
     </tr>
@@ -24,10 +24,10 @@
   <tr>
   <th scope="row">{{$key+1}}</th>
       <!-- <th> {{$department ->id}}</th> -->
-      <td>{{$department-> name}}</td>
-      <td>{{$department-> description}}</td>
-      <td>{{$department-> no}}</td>
-      <td>{{$department-> location}}</td>
+      <td>{{$department-> Name}}</td>
+      <td>{{$department-> Description}}</td>
+      <td>{{$department-> No}}</td>
+      <td>{{$department-> Location}}</td>
 
 
   

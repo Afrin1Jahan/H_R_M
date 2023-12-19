@@ -40,13 +40,13 @@ public function store(Request $request){
         'title'=>$request->designation_title,
         'description'=>$request->designation_description,
         'date'=>$request->designation_date,
-        'status'=>$request->designation_status,
-        'employee_id'=>$request->employee_id
+   
+       
     
     ]);
         
     notify()->success('your data has been stored!');
-    return redirect()->back();
+    return redirect()->route('des');
 
     
 }

@@ -24,12 +24,9 @@ class DepartmentController extends Controller
 
         if($departments){
             $departments->delete($id);
-        }
-
-        notify()->success('Deleted Successfully');
-
-        return redirect()->back();
-    }
+            notify()->success('Deleted Successfully');
+            return redirect()->back();
+        }}
 
 
     public function edit($id){
@@ -51,11 +48,11 @@ if($departments){
 
     $departments->update(
         [
-            'name'=>$request->department_name,
-            'description'=>$request->inputtextarea,
-            'no'=>$request->department_no,
-            'location'=>$request->department_location,
-            'employee_id'=>$request->employee_id
+            'Name'=>$request->department_name,
+            'Description'=>$request->inputtextarea,
+            'No'=>$request->department_no,
+            'Location'=>$request->department_location,
+            // 'employee_id'=>$request->employee_id
         ]
         );
         notify()->success('your data has been Updated!');
@@ -100,7 +97,7 @@ if($departments){
                 'description'=>$request->inputtextarea,
                 'no'=>$request->department_no,
                 'location'=>$request->department_location,
-                'employee_id'=>$request->employee_id
+                // 'employee_id'=>$request->employee_id
             ]
             );
             notify()->success('your data has been stored!');
