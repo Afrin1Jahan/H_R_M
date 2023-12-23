@@ -2,9 +2,9 @@
 @section('content')
 
 
-<H2>   Leave  </H2>
+<H2>   Leave Request </H2>
 
-<a href="{{route('leave.form')}}"  class="btn btn-warning">Create Leave</a>
+
 <table class="table">
   <thead>
     <tr>
@@ -52,7 +52,9 @@
   </tbody>
   {{$leaves->links()}}
 </table>
-
+<div class="text-center">
+<a href="{{route('leave.form')}}"  class="btn-info bg-info btn-Danger">Application for Leave</a>
+</div>
 @endsection
      
 

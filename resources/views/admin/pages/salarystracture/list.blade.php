@@ -1,37 +1,34 @@
 @extends('admin.master')
 @section('content')
-
+<div class="text-center fw-bold">
 <h1>Salarystracture Information</h1>
+<div>
 
-<a href="{{route('salary.form')}}"  class="btn btn-primary">click for more</a>
 
 <table class="table table-hover table-white">
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Status</th>
-      <th scope="col">Type</th>
+      <th scope="col">DesignationType</th>
+      <th scope="col">DepartmentType</th>
+      <th scope="col">amount</th>
+      
     </tr>
   </thead>
   <tbody>
 
 
-  @foreach  ($salarystractures as $salarystracture)
-
-
-
-
-    <tr>
+  @foreach($salarystracturess as $key=>$salarystracture)
+  <tr>
   
-    <td>{{$salarystracture->id}}</td>
-       <td>{{$salarystracture->name}}</td>
-      <td>{{$salarystracture->description}}</td>
+
+<th scope="row">{{$key+1}}</th>
+
+<!-- <td>{{$salarystracture->id}}</td> -->
+       <td>{{$salarystracture->relDesignation->DesignationType}}</td>
+       <td>{{$salarystracture->DepartmentType}}</td>
       <td>{{$salarystracture->amount}}</td>
-      <td>{{$salarystracture->status}}</td>
-      <td>{{$salarystracture->type}}</td>
+     
       </tr>
 
 
@@ -41,10 +38,12 @@
   </tbody>
 
 </table>
+<div class="text-center">
+<a href="{{route('salary.form')}}"  class="btn btn-warning">Add Salarystracture</a>
+</div>
 
 
 
-{{$salarystractures->links()}}
 
 
 @endsection

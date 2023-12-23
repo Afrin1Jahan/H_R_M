@@ -2,7 +2,7 @@
 @section('content')
 <h5>Payroll System</h5>
 
-<!-- <a href="{{route('payroll.form')}}"  class="btn btn-danger">Create Payroll</a> -->
+<a href="{{route('payroll.form')}}"  class="btn btn-danger">Create Payroll</a>
 
 
 <table class="table table-white">

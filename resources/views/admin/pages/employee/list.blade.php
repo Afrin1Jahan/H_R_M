@@ -1,8 +1,8 @@
 @extends('admin.master')
 @section('content')
-<h1>Employee</h1>
+<!-- <h1>Employee</h1> -->
 
-<a href="{{route('employee.form')}}" class="btn btn-warning">Add new employee</a>
+
 
 <!-- <h3>Data Table Employee</h3> -->
 <table class="table table-striped">
@@ -31,8 +31,8 @@
         <img style="border-radius: 60px;" width="7%" src="{url('/uploads/',$employee->Employee_image)}}" alt="No Image">
       </td> 
 
-      <td>{{$employee->Department}}</td>
-      <td>{{$employee->Designation}}</td>
+      <td>{{$employee->department->Name}}</td>
+      <td>{{$employee->designation->title}}</td>
 
       <td>
 
@@ -48,5 +48,7 @@
 
   </tbody>
 </table>
-
+<div class="text-center">
+<a href="{{route('employee.form')}}" class="btn btn-warning text">Add new employee</a>
+</div>
 @endsection

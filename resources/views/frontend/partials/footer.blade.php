@@ -9,7 +9,7 @@
                 <p class="mbr-text1 align-left mbr-fonts-style align-left display-7">Lorem ipsum dolor sit amet consectetur adipisicing tempor.</p>
             </div>
             <div class="col-12 col-lg-6 col-md-6">
-                <p class="mbr-text2 align-right mbr-fonts-style align-left display-7">© 2020 SolutionM4 Theme by <a href="#" class="text-secondary">Mobirise</a></p>
+                <p class="mbr-text2 align-right mbr-fonts-style align-left display-7">© 2020 SolutionM4 Theme by <a href="#" class="text-secondary">Kodeeo</a></p>
             </div>
         </div>
     </div>

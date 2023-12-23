@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-<a href="{{route('notice.form')}}"  class="btn btn-warning">Create Notice</a>
+
 
 <table class="table">
   <thead>
@@ -24,5 +24,7 @@
     @endforeach
   </tbody>
 </table>
-
+<div class="text-center">
+<a href="{{route('notice.form')}}"  class="btn btn-warning">Create Notice</a>
+</div>
 @endsection

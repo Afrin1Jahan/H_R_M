@@ -101,7 +101,7 @@ if($departments){
             ]
             );
             notify()->success('your data has been stored!');
-            return redirect()->back();
-    
+            return redirect()->route('department.list');
+            
     }
 }

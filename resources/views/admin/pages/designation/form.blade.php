@@ -41,11 +41,25 @@
     <input type="text" class="form-control" name="designation_date" id="inputAddress" placeholder="date">
   </div>
   -->
+  <div class="form-group col-md-6">
+      <label for="inputPassword4">Department</label>
+      <select type="text" class="form-control" id="" placeholder="Enter department" name="department">
+
+      @foreach (  $departments as $dept)
+      <option value="{{ $dept->id}}">{{ $dept->Name}}</option>
+       @endforeach
+      </select> 
+   
+
+      <!-- <input type="textarea" class="form-control" name="department" id="inputPassword4" placeholder="text"> -->
+    </div>
+
+
  
 
   <div class="form-group col-md-6">
     <label for="inputAddress">Date</label>
-    <input type="text" class="form-control" name="designation_date" id="inputAddress" placeholder="date">
+    <input type="date" class="form-control" name="designation_date" id="inputAddress" placeholder="date">
   </div>
  
   

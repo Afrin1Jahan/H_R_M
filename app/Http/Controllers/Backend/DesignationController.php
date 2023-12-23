@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Designation;
+use App\Models\Department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,13 +12,15 @@ class DesignationController extends Controller
 {
     public function designation (){
         // dd('hi');
-        $designations= Designation::all();
-        
+        $designations= Designation::with('department')->get();
+      
+        // dd($designations);
         return view("admin.pages.designation.list",compact('designations'));
     }
 
    public function list(){
-    return view("admin.pages.designation.form");
+      $departments = Department::all();
+    return view("admin.pages.designation.form",compact('departments'));
    }
 
 public function store(Request $request){
@@ -39,6 +42,7 @@ public function store(Request $request){
     
         'title'=>$request->designation_title,
         'description'=>$request->designation_description,
+        'department'=>$request->department,
         'date'=>$request->designation_date,
    
        

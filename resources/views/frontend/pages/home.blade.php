@@ -12,8 +12,7 @@
             <div class="mbr-white col-md-12 col-lg-10">
            
                 <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-3"><strong></strong><strong><br></strong><p  class="h1" class="text-danger "> Human Resource Management For Kodeeo</p></h1>
-                <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5">Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+                <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5">We are kodeeo.<br>
                 </p>
                 <div class="mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://mobirise.co"><span class="mobi-mbri mobi-mbri-paper-plane mbr-iconfont mbr-iconfont-btn"></span>GET STARTED</a></div>
             </div>
@@ -40,7 +39,7 @@
 
                         <h4 class="mbr-section-title pb-2 mbr-semibold mbr-fonts-style display-5">Digital Marketing</h4>
                         <p class="mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style display-7">
-                            Lorem ipsum dolor sit mattis amet consectetur adipiscing</p>
+                        Attract and engage the target audience through valuable content</p>
 
                         <div class="link-wrapper">
                             <span class="mbr-iconfont mobi-mbri-right mobi-mbri"></span>

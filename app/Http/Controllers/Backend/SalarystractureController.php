@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Department;
+use App\Models\Designation;
 use App\Models\Salarystracture;
 use App\Models\Employee;
 use Illuminate\Http\Request;
@@ -13,18 +14,22 @@ class SalarystractureController extends Controller
     public function list(){
 
 
-        $salarystractures= salarystracture::paginate(5);
+        // $salarystractures= salarystracture::all();
+        // $salarystractures= salarystracture::paginate(5);
         
-
-        return view('admin.pages.salarystracture.list',compact('salarystractures'));
+          $salarystracturess = Salarystracture::with('relDesignation')->get();
+        //   dd($salarystracturess );
+        return view('admin.pages.salarystracture.list',compact('salarystracturess'));
 
     }
 
     public function form(){
+        $departments= Department::all();
+        $designations = Designation::all();
         $employees=Employee::all();
 
-        
-       return view('admin.pages.salarystracture.form',compact('employees'));
+       
+       return view('admin.pages.salarystracture.form',compact('employees','designations','departments'));
 
    
     }
@@ -32,11 +37,10 @@ class SalarystractureController extends Controller
         //dd($request->all());
         salarystracture::create ([
 
-            'name'=>$request->salary_name,
-            'description'=>$request->salary_description,
-            'amount'=>$request->salary_amount,
-            'status'=>$request->salary_status,
-            'type'=>$request->salary_type,
+            'DesignationType'=>$request->DesignationType,
+          'DepartmentType'=>$request->DepartmentType,
+            'amount'=>$request->amount,
+            
 
 
         ]);

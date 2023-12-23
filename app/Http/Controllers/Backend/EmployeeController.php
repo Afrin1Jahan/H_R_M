@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Department;
 use App\Models\Employee;
+use App\Models\designation;
 use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -17,18 +18,24 @@ class EmployeeController extends Controller
         //  $employees=user::all();
         // $employees=user::all();
         // $departments = Department::all();
-        $employees = User::where('role', '=', 'Employee')->get();
+
+        // $employees = User::where('role', '=', 'Employee')->get();
+        $employees = Employee::with('department', 'designation')->get();
+        // dd($employees);
+
         // dd($employees->toarray());
 
          //with(['department','designation'])->get();
         
+        //  $departments = Employee::with('reldepartment')->get();
+        //  dd($departments);
         return view("admin.pages.employee.list",compact('employees'));
     }
 
     public function form(){
-
+        $designations = designation::all();
         $departments= department::all();
-        return view("admin.pages.employee.form",compact('departments'));
+        return view("admin.pages.employee.form",compact('departments','designations'));
     }
 
     public function delete($id)

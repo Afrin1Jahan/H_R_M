@@ -56,15 +56,22 @@
    
      <div class="form-group col-md-6">
       <label for="">Department</label>
-      <input  type="text"  class="form-control"  placeholder="Enter department" name="Department"  >
-     
+      <select type="text" class="form-control" id="" placeholder="Enter department" name="Department">
+      <!-- <input  type="text"  class="form-control"  placeholder="Enter department" name="Department"  > -->
+      @foreach (  $departments as $dept)
+      <option value="{{ $dept->id}}">{{ $dept->Name}}</option>
+       @endforeach
+      </select> 
     </div>
     
     
     <div class="form-group col-md-6">
       <label for="">Designation</label>
-      <input type="text"   class="form-control"  placeholder="Enter designation" name="Designation"  >
-      
+      <select type="text" class="form-control" id="" placeholder="Enter designation" name="Designation">
+      @foreach ( $designations as $desi)
+      <option value="{{$desi->id}}">{{$desi->title}}</option>
+       @endforeach
+      </select>  
     </div>
     
     

@@ -95,8 +95,8 @@
     <div class="form-group col-md-6">
       <label for="">Designation</label>
 
-      <select class="form-control" id=""  placeholder="Enter designation" name="Designation" >
-      @foreach (  $desigantions as $desi)
+<select class="form-control" id=""  placeholder="Enter designation" name="Designation" >
+      @foreach ( $desigantions as $desi)
       <option value="{{$desi->id}}">{{$desi->title}}</option>
        @endforeach
       </select>  

@@ -1,8 +1,7 @@
 @extends('admin.master')
+
 @section('content')
-<div class="text-center fw-bold">
-<h1>Department List</h1>
-</div>
+
 
 
 
@@ -16,7 +15,6 @@
       <th scope="col">No</th>
       <th scope="col">Location</th>
       
-      <th scope="col">Action</th>
     </tr>
   </thead>
 
@@ -31,28 +29,32 @@
       <td>{{$department-> Location}}</td>
 
 
-  
-      
-      
-    <td>
-    <a class="btn btn-primary" href="">View</a>
-    <a class="btn btn-success" href="{{route('department.edit',$department->id)}}">Edit</a>
-    <a class="btn btn-danger" href="{{route('department.delete',$department->id)}}">Delete</a> 
-  
-  </td>
-
-</tr>
+       
+      @endforeach
+ 
+ </tbody>
+</table>
 
 
-@endforeach
 
-    
-  
-  </tbody>
-</table> 
-{{$departments->links()}}
 <div class="text-center">
-  <a href="{{route('department.form')}}" class="btn btn-warning">Add new department</button></a>
-  <a href="{{route('department.report')}}" class="btn btn-success">Report</button></a>
+<button class="btn btn-success" onclick="printContent('printDiv')">Print</button>
+<div id="printDiv" >
 </div>
+
+
 @endsection
+@push('yourJsCode')
+  
+<script type="text/javascript">
+      
+      function printContent(el){
+          var restorepage = $('body').html();
+          var printcontent = $('#' + el).clone();
+          $('body').empty().html(printcontent);
+          window.print();
+          $('body').html(restorepage);
+      }
+  
+  </script>
+@endpush
