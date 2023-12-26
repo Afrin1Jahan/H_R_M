@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Designation extends Model
 {
    protected $guarded=[];
-    public function department(){
+    public function departmentRel(){
       return $this->belongsTo(Department::class, 'department', 'id');
     }
 }

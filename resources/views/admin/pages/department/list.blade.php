@@ -35,7 +35,7 @@
       
       
     <td>
-    <a class="btn btn-primary" href="">View</a>
+    <a class="btn btn-primary" href="{{route('department.view',$department->id)}}">View</a>
     <a class="btn btn-success" href="{{route('department.edit',$department->id)}}">Edit</a>
     <a class="btn btn-danger" href="{{route('department.delete',$department->id)}}">Delete</a> 
   

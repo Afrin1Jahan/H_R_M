@@ -36,13 +36,13 @@ class SalarystractureController extends Controller
     public function store(Request $request){
         //dd($request->all());
         salarystracture::create ([
-
-            'DesignationType'=>$request->DesignationType,
-          'DepartmentType'=>$request->DepartmentType,
-            'amount'=>$request->amount,
-            
-
-
+        'DesignationType'=>$request->DesignationType,
+         'Title'=>$request->title,
+         'Basic'=>$request->basic,
+         'HouseAllownce'=>$request->houseallowance,
+         'MedicalAllowance'=>$request->transportallowance,
+         'TransportAllowance'=>$request->medicalallowance,
+         'total'=>$request->basic+$request->houseallowance+$request->transportallowance+$request->medicalallowance
         ]);
 
         notify()->success('your data has been stored!');

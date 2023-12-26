@@ -17,6 +17,12 @@ class DepartmentController extends Controller
     //    dd('habijabi');
     }
 
+Public function view($id){
+    $departments=Department::find($id);
+    
+    return view('admin.pages.department.view',compact('departments'));
+}
+
 
     public function delete($id){
 
@@ -34,8 +40,9 @@ class DepartmentController extends Controller
         $departments=Department::find($id);
 
         return view('admin.pages.department.edit',compact('departments'));
+        return redirect()->route('department.list');
 
-
+   
     }
 
     public function update(Request $request,$id){

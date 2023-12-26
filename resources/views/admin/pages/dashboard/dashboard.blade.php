@@ -4,37 +4,44 @@
 
 <h1>Dashboard</h1>
 
+<div class="container">
+      <div class="row">
+      <div class="card col text-dark bg-warning mb-3 mr-3 mt-5" style="max-width: 20rem;">
+          <div class="card-header">Total Employee</div>
+          <div class="card-body">
+            <h5 class="mb-2">{{ $employees}}</h5>
+           
+            <p class="card-text"></p>
+          </div>
+        </div>
+        
+        <div class="card col text-dark bg-primary mb-3 mr-3 mt-5" style="max-width: 20rem;">
+          <div class="card-header">Department</div>
+          <div class="card-body">
+            <h5 class="card-title">{{$departments}}</h5>
+            <p class="card-text"></p>
+          </div>
+        </div>
 
-<div class="row">
-<div class="card text-dark bg-warning mb-3" style="max-width: 19rem;">
-  <div class="card-header">Total Employee</div>
-  
-  <div class="card-body">
-  <h3 class="mb-2">{{ $employees}}</h3>
-    <h5 class="card-title"></h5>
-    <p class="card-text"></p>
+        <div class="card text-dark bg-danger mb-3 mr-3 mt-5" style="max-width: 20rem;">
+          <div class="card-header">Total User</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ $users}}</h5>
+            <p class="card-text"></p>
+          </div>
+        </div>
+
+        <div class="card text-dark bg-success mb-3 mr-3 mt-5" style="max-width: 20rem;">
+          <div class="card-header">Total Leave request</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ $leaves }}</h5>
+            <p class="card-text"></p>
+          </div>
+        </div>
   </div>
-</div>
+  <!-- /uporer tuku -->
 
-
-
-<div class="card text-dark bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Department</div>
-  <div class="card-body">
-    <h5 class="card-title">{{$departments}}</h5>
-    <p class="card-text"></p>
-  </div>
-</div>
-
-
-<div class="card text-dark bg-danger mb-3" style="max-width: 20rem;">
-  <div class="card-header">Total User</div>
-  <div class="card-body">
-    <h5 class="card-title">{{ $users}}</h5>
-    <p class="card-text"></p>
-  </div>
-</div>
-<!-- <div class="row">
+  <!-- <div class="row">
   <div class="col-md-4 d-flex">
   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
       <div class="card-body py-4">
@@ -45,7 +52,7 @@
             <div class="mb-0">
               <!-- <span class="badge badge-soft-success me-2"> +5.35% </span>
                             <span class="text-muted">Since last week</span> -->
-            <!-- </div>
+  <!-- </div>
           </div>
           
           <div class="d-inline-block ms-3 ">
@@ -74,7 +81,7 @@
             <div class="mb-0">
               <!-- <span class="badge badge-soft-success me-2"> +5.35% </span>
                             <span class="text-muted">Since last week</span> -->
-            <!-- </div>
+  <!-- </div>
           </div>
           <div class="d-inline-block ms-3">
             <div class="stat">
@@ -102,8 +109,8 @@
             <div class="mb-0">
               <!-- <span class="badge badge-soft-success me-2"> +5.35% </span>
                             <!-- <span class="text-muted">Since last week</span> -->
-            <!-- </div> -->
-          <!-- </div>
+  <!-- </div> -->
+  <!-- </div>
           <div class="d-inline-block ms-3">
             <div class="stat">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" data-slot="icon" class="w-6 h-6">
@@ -124,4 +131,5 @@
 
 
 
-@endsection
+
+  @endsection

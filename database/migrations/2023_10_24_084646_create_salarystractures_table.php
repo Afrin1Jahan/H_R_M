@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('salarystractures', function (Blueprint $table) {
             $table->id();
             $table->string('DesignationType');
-            $table->string('DepartmentType');
-            // $table->text('description')->nullable();
-            $table->integer('amount');
-            // $table->text('status')->nullable();
-            // $table->string('type');
-
+            $table->string('Title');
+            $table->string('Basic');
+            $table->string('HouseAllownce');
+            $table->string('MedicalAllowance');
+            $table->string('TransportAllowance');
+            $table->string('Total');
             $table->timestamps();
         });
     }

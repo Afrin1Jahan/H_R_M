@@ -1,8 +1,6 @@
 @extends('admin.master')
 @section('content')
-
-
-<form action="{{route('leavetype.store')}}" method="post">
+<form action="{{route('leavetype.store',$leavetypes->id)}}" method="post">
     @csrf
 
 
@@ -20,8 +18,8 @@
     </div>
 
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Leave Balance</label>
-      <input type="number" class="form-control" id="" placeholder="balance" name="balance">
+      <label for="inputPassword4">LeaveBalance</label>
+      <input value="{{$leavetypes->LeaveBalance}}" type="number" class="form-control" id="" placeholder="balance" name="balance">
     </div>
 
     <div class="form-group col-md-6">
@@ -35,7 +33,6 @@
   
   <button type="submit" class="btn-info bg-info btn-primary">Submit</button>
 </form>
-
 
 
 @endsection

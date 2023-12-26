@@ -20,6 +20,8 @@ return new class extends Migration
             $table->time('check_in');
             $table->time('check_out')->nullable(); 
             $table->date('select_date');
+            $table->string('dutyhour')->nullable();
+            $table->string('overtime')->nullable();
             $table->timestamps();
         });
     }

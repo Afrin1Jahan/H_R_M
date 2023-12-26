@@ -10,9 +10,13 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">DesignationType</th>
-      <th scope="col">DepartmentType</th>
-      <th scope="col">amount</th>
-      
+      <th scope="col">Title</th>
+      <th scope="col">Basic</th>
+      <th scope="col">HouseAllowance</th>
+      <th scope="col">TransportAllowance</th>
+      <th scope="col">MedicalAllowance</th>
+      <th scope="col">Total</th>
+     
     </tr>
   </thead>
   <tbody>
@@ -25,10 +29,16 @@
 <th scope="row">{{$key+1}}</th>
 
 <!-- <td>{{$salarystracture->id}}</td> -->
-       <td>{{$salarystracture->relDesignation->DesignationType}}</td>
-       <td>{{$salarystracture->DepartmentType}}</td>
-      <td>{{$salarystracture->amount}}</td>
-     
+       <td>{{$salarystracture->relDesignation->title}}</td>
+      
+      <td>{{$salarystracture->Title}}</td>
+      <td>{{$salarystracture->Basic}}</td>
+      <td>{{$salarystracture->HouseAllownce}}</td>
+      <td>{{$salarystracture->TransportAllowance}}</td>
+      <td>{{$salarystracture->MedicalAllowance}}</td>
+    
+      <td>{{$salarystracture->Total}}</td>
+    
       </tr>
 
 

@@ -12,7 +12,7 @@ class DesignationController extends Controller
 {
     public function designation (){
         // dd('hi');
-        $designations= Designation::with('department')->get();
+        $designations= Designation::with('departmentRel')->get();
       
         // dd($designations);
         return view("admin.pages.designation.list",compact('designations'));

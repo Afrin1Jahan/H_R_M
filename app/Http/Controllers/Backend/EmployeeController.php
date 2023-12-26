@@ -20,8 +20,8 @@ class EmployeeController extends Controller
         // $departments = Department::all();
 
         // $employees = User::where('role', '=', 'Employee')->get();
-        $employees = Employee::with('department', 'designation')->get();
-        // dd($employees);
+        $employees = Employee::with('departmentrel', 'designationrel')->get();
+        //  dd($employees);
 
         // dd($employees->toarray());
 
@@ -36,6 +36,13 @@ class EmployeeController extends Controller
         $designations = designation::all();
         $departments= department::all();
         return view("admin.pages.employee.form",compact('departments','designations'));
+    }
+
+
+    public function edit($id){
+        $employees = Employee::find($id);
+        return view("admin.pages.employee.edit",compact('employees'));
+        return redirect()->route('employee.name');
     }
 
     public function delete($id)

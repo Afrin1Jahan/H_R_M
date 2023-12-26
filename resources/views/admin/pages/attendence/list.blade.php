@@ -17,7 +17,8 @@
       <th scope="col">check_in</th>
       <th scope="col">check_out</th>
       <th scope="col">select_date</th>
-      
+      <th scope="col">dutyhour</th>
+      <th scope="col">overtime</th>
     </tr>
   </thead>
 
@@ -32,7 +33,8 @@
   <td>{{$attendence->check_in }}</td>
   <td>{{$attendence->check_out}}</td>
    <td>{{$attendence->select_date }}</td>
-
+   <td>{{$attendence->dutyhour }}</td>
+   <td>{{$attendence->overtime }}</td>
  <!-- <td>
     <a class="btn btn-primary" href="">View</a>
     <a class="btn btn-success" href="{{route('attendence.edit',$attendence->id)}}">Edit</a>

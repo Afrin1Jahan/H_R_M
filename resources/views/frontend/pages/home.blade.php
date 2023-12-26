@@ -12,9 +12,11 @@
             <div class="mbr-white col-md-12 col-lg-10">
            
                 <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-3"><strong></strong><strong><br></strong><p  class="h1" class="text-danger "> Human Resource Management For Kodeeo</p></h1>
-                <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5">We are kodeeo.<br>
+               <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5"><br>
+                </p> 
+                <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5"><br>
                 </p>
-                <div class="mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://mobirise.co"><span class="mobi-mbri mobi-mbri-paper-plane mbr-iconfont mbr-iconfont-btn"></span>GET STARTED</a></div>
+                <!-- <div class="mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://mobirise.co"><span class="mobi-mbri mobi-mbri-paper-plane mbr-iconfont mbr-iconfont-btn"></span>GET STARTED</a></div> -->
             </div>
         </div>
     </div>
@@ -142,7 +144,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-12 md-pb">
-                <img src="assets/images/03.jpg" alt="Mobirise">
+               <img src="{{url('uploads/kodeeo_logo.jpg')}}" alt="Image" class="img-fluid">
             </div>
 
             <div class="col-lg-6 col-md-12 md-pb">

@@ -8,20 +8,18 @@
 @csrf
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationDefault01">Employee</label>
-      <select name="employee" class="form-control" id="">
-      @foreach ( $employees as $employee)
-
-    <option value="{{ $employee->id}}">{{ $employee->name}}</option>
-    @endforeach
-</select>
+      <label for="validationDefault01">Employee Name</label>
+      
+      <input readonly type="text" class="form-control" id="validationDefault01" placeholder="employee name" name="employee" value="{{ $employees->employee_name}}">
+      
+   
 </div>
-      <!-- <input type="text" class="form-control" id="validationDefault01" placeholder="employee name" name="employee" required>
-    </div>
-     -->
+     <!-- <input type="text" class="form-control" id="validationDefault01" placeholder="employee name" name="employee" required>
+    </div> -->
+    
     
     <div class="col-md-4 mb-5">
-    <label for="">Month</label>
+    <label for="">Select Month</label>
             <select type="text" class="form-control" id="" placeholder="enter month" name="month">
       <option value="1">January</option>
       <option value="2">February</option>
@@ -42,7 +40,7 @@
 
 
     <div class="col-md-4 mb-5">
-      <label for="year">Year</label>
+      <label for="year">Select Year</label>
       <!-- <label for="year">Year:</label> -->
     <select type="text"  class="form-control" id="year" placeholder="enter month" name="year" >
     <option value="1">2023</option>
@@ -57,31 +55,54 @@
 
 
 
+    <div class="col-md-4 mb-6">
+      <label for="">Basic Salary</label>
+      <input readonly type="number" class="form-control" id="" placeholder="Enter basic" name="basic">
 
-    <div class="col-md-4 mb-5">
-      <label for="validationDefault01">Paysalary</label>
-      <input type="text" class="form-control" id="validationDefault01" placeholder="enter salary" name="paysalary" required>
+       
+     <!-- <input required type="text" class="form-control" id="" placeholder="Enter basic" name="basic"> -->
+      @error('text')
+      <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+
     </div>
 
 
 
 
-    <div class="col-md-4 mb-5">
-      <label for="validationDefault01">Monthly Salary</label>
-      <input type="text" class="form-control" id="validationDefault01" placeholder="enter salary" name="monthlysalary" required>
+    <div class="col-md-4 mb-6">
+      <label for="">House Allowance</label>
+      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="houseallowance">
+      @error('text')
+      <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+     
     </div>
 
+    
 
-    <div class="col-md-4 mb-3">
-      <label for="validationDefault01">Deduction Ammount</label>
-      <input type="text" class="form-control" id="validationDefault01" placeholder="enter ammount" name="deductionsalary" required>
+    <!-- </div> -->
+
+    <div class="col-md-4 mb-6">
+      <label for="">Transport Allowance</label>
+      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="transportallowance">
+      @error('number')
+      <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
     </div>
+      
 
+     
 
+    
+    <div class="col-md-4 mb-6">
+      <label for="">Medical Allowance</label>
+      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="medicalallowance">
+     
+      @error('number')
+      <div class="alert alert-danger">{{ $message }}</div>
+      @enderror 
 
-    <div class="col-md-4 mb-3">
-      <label for="validationDefault01">Bonus Ammount</label>
-      <input type="text" class="form-control" id="validationDefault01" placeholder="enter  ammount" name="bonusammount" required>
     </div>
 
   <button class="btn-info bg-info btn-warning" type="submit">Submit</button>

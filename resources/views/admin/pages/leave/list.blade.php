@@ -15,7 +15,9 @@
       <th scope="col">emergency_contact</th>
       <th scope="col">reason_for_leave</th>
       <th scope="col">status</th>
+      @if(auth()->user()->role=='admin')
       <th scope="col">Action</th>
+       @endif
       </tr>
   </thead>
   <tbody>
@@ -23,7 +25,7 @@
   @foreach ( $leaves as $key=> $leave)
   <tr>
 <th scope="row">{{$key+1,}}</th>
-<td>{{$leave->relLeavetype->leavetype}}</td>
+<td>{{$leave->relLeavetype->Leavetype}}</td>
 <td>{{$leave->start_date}}</td>
 <td>{{$leave->end_date}}</td>
 <td>{{$leave->emergency_contact}}</td>
@@ -32,7 +34,7 @@
       </td>
       <td>
 
-      @if ($leave->status == 'pending')
+      @if ($leave->status == 'pending' && (auth()->user()->role=='admin'))
       
         <a class="btn btn-success" href="{{route('leave.approved',$leave->id)}}">Approve</a>
         <a class="btn btn-warning" href="{{route('leave.reject',$leave->id)}}">Reject</a>
@@ -52,9 +54,11 @@
   </tbody>
   {{$leaves->links()}}
 </table>
+
 <div class="text-center">
 <a href="{{route('leave.form')}}"  class="btn-info bg-info btn-Danger">Application for Leave</a>
 </div>
+
 @endsection
      
 

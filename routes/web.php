@@ -13,7 +13,7 @@ use App\Http\Controllers\Backend\LeaveTypeController;
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\ReportController;
-
+use App\Http\Controllers\Frontend\setupshowController as FrontendsetupshowController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\CompanysetupController;
 use App\Http\Controllers\Backend\CalanderController;
@@ -21,6 +21,7 @@ use App\Http\Controllers\Backend\Homecontroller;
 use App\Http\Controllers\Backend\PayrollController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\SalarystractureController;
+use App\Http\Controllers\Frontend\ContactController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Routing\Router;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -74,6 +75,7 @@ Route::get('/Notice/show/', [FrontendNoticeController::class, 'noticeshow'])->na
             Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.name');
             Route::get('/Department', [DepartmentController::class, 'department']);
             Route::get('/department/list', [DepartmentController::class, 'list'])->name('department.list');
+            Route::get('/department/view/{id}',[DepartmentController::class,'view'])->name('department.view');
             Route::get('/department/delete/{id}', [DepartmentController::class, 'delete'])->name('department.delete');
             Route::get('/department/edit/{id}', [DepartmentController::class, 'edit'])->name('department.edit');
             Route::put('/department/update/{id}', [DepartmentController::class, 'update'])->name('department.update');
@@ -88,11 +90,16 @@ Route::get('/Notice/show/', [FrontendNoticeController::class, 'noticeshow'])->na
 
             Route::get('/Employee', [EmployeeController::class, 'employee'])->name('employee.name');
             Route::get('/Employee/form', [EmployeeController::class, 'form'])->name('employee.form');
-            Route::post('/Employee/store', [EmployeeController::class, 'store'])->name('employee.store');
-            Route::get('/Employee/delete/{id}', [EmployeeController::class, 'delete'])->name('Employee.delete');
+            Route::get('/Employee/edit/{id}', [EmployeeController::class, 'edit'])->name('Employee.edit');
 
-            Route::get('/payroll', [PayrollController::class, 'list'])->name('payroll.list');
-            Route::get('/payroll/list', [PayrollController::class, 'form'])->name('payroll.form');
+            Route::post('/Employee/store', [EmployeeController::class, 'store'])->name('employee.store');
+           
+            Route::get('/Employee/delete/{id}', [EmployeeController::class, 'delete'])->name('Employee.delete');
+            
+
+            Route::get('/payroll', [PayrollController::class,'list'])->name('payroll.list');
+            Route::get('/payroll/list/{employee_id}', [PayrollController::class, 'form'])->name('payroll.form');
+            
             Route::post('/payroll/store', [PayrollController::class, 'store'])->name('payroll.store');
 
             Route::get('/SalaryStracture', [SalarystractureController::class, 'list'])->name('salary.list');
@@ -101,6 +108,8 @@ Route::get('/Notice/show/', [FrontendNoticeController::class, 'noticeshow'])->na
 
             Route::get('/leavetype/list', [LeaveTypeController::class, 'list'])->name('leavetype.list');
             Route::get('/leavetype/form', [LeaveTypeController::class, 'form'])->name('leavetype.form');
+            Route::get('/leavetype/edit/{id}', [LeaveTypeController::class, 'edit'])->name('leavetype.edit');
+            Route::get('/leavetype/delete/{id}', [LeaveTypeController::class, 'delete'])->name('leavetype.delete');
             Route::post('/leavetype/store', [LeaveTypeController::class, 'store'])->name('leavetype.store');
             Route::get('/Notice/list', [NoticeController::class, 'list'])->name('notice.list');
             Route::get('/Notice/form', [NoticeController::class, 'form'])->name('notice.form');
@@ -134,8 +143,15 @@ Route::get('/Notice/show/', [FrontendNoticeController::class, 'noticeshow'])->na
         // });
 
         Route::get('/Report', [ReportController::class, 'list'])->name('user.report');
-        Route::get('/role', [RoleController::class, 'role'])->name('role.role');
-        Route::get('/Company/setup', [CompanysetupController::class, 'setup']);
+        // Route::get('/role', [RoleController::class, 'role'])->name('role.role');
+
+        Route::get('/Company/setup', [CompanysetupController::class, 'list'])->name('company.list');
+        Route::get('/Company/list', [CompanysetupController::class, 'form'])->name('company.form');
+        Route::post('/Company/store', [CompanysetupController::class, 'store'])->name('company.store');
+        Route::get('companysetup/show/', [FrontendsetupshowController::class, 'setupshow'])->name('setup.show');
+        Route::get('companysetup/delete/{id}', [FrontendsetupshowController::class, 'delete'])->name('company.delete');
+        
+       Route::get('/company/contact',[ContactController::class,'view'])->name('company.view');
         Route::get('/Holiday/calander', [CalanderController::class, 'calander']);
         
         Route::get('/profile', [UserController::class, 'profile'])->name('profile.view');

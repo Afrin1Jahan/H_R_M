@@ -16,15 +16,16 @@
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-              class="rounded-circle img-fluid" style="width: 150px;">
+      
+         
             <h5 class="my-3">{{auth()->user()->name}}</h5>
             <p class="text-muted mb-1">{{auth()->user()->role}}</p>
             <p class="text-muted mb-4">{{auth()->user()->email}}</p>
 
-
+            <img src="url('/uploads/20231220092123.jpg')" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
             
-            <a href="{{route('profile.edit')}}"  type="button" class="btn btn-primary" >Edit</a>
+            <a href="{{route('profile.edit')}}"  type="button" class="btn-info bg-info btn-primary" >Edit</a>
       
           </div>
         </div>
@@ -67,3 +68,6 @@
            
 </section>
 @endsection
+
+<!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;" -->

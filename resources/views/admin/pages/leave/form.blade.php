@@ -9,7 +9,7 @@
       <label for="inputEmail4">leavetype</label>
       <select name="leave_type" class="form-control" id="">
       @foreach ( $leavetypes as $leave)
-    <option value="{{$leave->id}}">{{$leave->leavetype}}</option>
+    <option value="{{$leave->id}}">{{$leave->Leavetype}}</option>
     @endforeach
 </select>
 
@@ -35,11 +35,11 @@
       <input type="textarea" class="form-control" name="reason_for_leave" id="" placeholder="">
       </div>
 
-
+      @if(auth()->user()->role=='admin')
       <div class="form-group col-md-15">
       <label for="inputEmail4">action</label>
       <input type="text" class="form-control" id="status" placeholder="status" name="action">
       </div> 
-
+    @endif
       <button type="submit" class="btn-info bg-info btn-primary">Submit</button>
     @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 
 use App\Models\Attendence;
+use Carbon\Carbon;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,7 +14,7 @@ class AttendenceController extends Controller
 {
     public function list()
     {
-        $attendences = Attendence::paginate(5);
+        $attendences = Attendence::paginate(10);
         return view("admin.pages.attendence.list", compact('attendences'));
     }
 
@@ -57,8 +58,6 @@ class AttendenceController extends Controller
 
     public function checkin()
     {
-        
-
         $existingAttendence = Attendence::where('employee_id', auth()->user()->id)
             ->WhereDate('select_date', now()->toDateString())
             ->first();
@@ -93,11 +92,19 @@ class AttendenceController extends Controller
                 notify()->error('you have already checked out for today.');
                 return redirect()->back();
             }
+            $mytime =Carbon::now();
+            $totalDuration = $mytime->diffInSeconds($existingAttendence->check_in);
+            $overTimeDiff = $mytime->diffInSeconds('17:00:00');
+
+            $overTime =gmdate('H:i:s', $overTimeDiff);
+            $dutyHour=gmdate('H:i:s', $totalDuration);
 
             $existingAttendence->update([
-
                 'check_out'=>now()->format('H:i:s'),
+                'dutyhour'=>$dutyHour,
+                'overtime'=>$overTime,
             ]);
+            
             return redirect()->back();
 
             $checkInTime = \Carbon\Carbon::createFromTimeString($existingAttendence->check_in);

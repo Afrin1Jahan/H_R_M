@@ -6,15 +6,15 @@
 
 @csrf
 
-
+     
     <div class="form-group col-md-6">
       <label for="inputEmail4">Title</label>
-      <input required type="text" class="form-control" name="designation_title" id="" placeholder="imput title">
+      <input required type="text" class="form-control" name="designation_title" id="" placeholder="input title">
 
       @error('designation_title')
       <div class="alert alert-danger">{{$messege}}</div>
       @enderror
-
+    </div>
 
 
 
@@ -31,7 +31,8 @@
 
     <div class="form-group col-md-6">
       <label for="inputPassword4">Description</label>
-      <input type="textarea" class="form-control" name="designation_description" id="inputPassword4" placeholder="text">
+      <textarea name="inputtextarea" name="designation_description" class="form-control" id="inputdescription" cols="80" rows="5"></textarea>
+      <!-- <input type="textarea" class="form-control" name="designation_description" id="inputPassword4" placeholder="text"> -->
     </div>
 
 
@@ -43,7 +44,7 @@
   -->
   <div class="form-group col-md-6">
       <label for="inputPassword4">Department</label>
-      <select type="text" class="form-control" id="" placeholder="Enter department" name="department">
+      <select type="textarea" class="form-control" id="" placeholder="Enter department" name="department">
 
       @foreach (  $departments as $dept)
       <option value="{{ $dept->id}}">{{ $dept->Name}}</option>

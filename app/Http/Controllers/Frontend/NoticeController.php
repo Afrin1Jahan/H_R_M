@@ -13,4 +13,8 @@ $notice = Notice::all();
 
 return view('frontend.pages.notice', compact('notice'));
  }
+
+
+
+
 }

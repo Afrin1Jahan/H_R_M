@@ -18,14 +18,17 @@
     </tr>
   </thead>
   <tbody>
- 
+
+
   @foreach($designations as $key=>$designation)
+
+
 
   <tr>
   <th scope="row">{{$key+1}}</th>
   <td>{{$designation->title}}</td> 
   <td>{{$designation->description}}</td> 
-  <td>{{$designation->department->Name}}</td> 
+  <td>{{optional($designation->departmentRel)->Name}}</td> 
   <td>{{$designation->date}}</td> 
 <!--   
   <td>

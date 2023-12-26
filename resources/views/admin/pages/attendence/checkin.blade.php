@@ -73,7 +73,24 @@
     </div> -->
     
 
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">dutyhour</label>
+      <input type="text" class="form-control" id="inputdate" placeholder="hour" name="duty_hour">
+      @error('text')
+      <div class="alert alert-danger">{{$message}}</div>
+      @enderror
+    </div>
+
     
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">overtime</label>
+      <input type="text" class="form-control" id="inputdate" placeholder="time" name="over_time">
+      @error('text')
+      <div class="alert alert-danger">{{$message}}</div>
+      @enderror
+    </div>
 
     
    

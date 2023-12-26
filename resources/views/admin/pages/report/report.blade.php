@@ -29,8 +29,8 @@
         
         <td>{{$User->email}}</td>
 
-        <td>{{$User->Department	}}</td>
-        <td>{{$User->Designation}}</td>
+        <td>{{$User->Name	}}</td>
+        <td>{{$User->title}}</td>
         <td>{{$User->role}}</td>
       
 

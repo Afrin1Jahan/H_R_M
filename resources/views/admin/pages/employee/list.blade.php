@@ -31,14 +31,14 @@
         <img style="border-radius: 60px;" width="7%" src="{url('/uploads/',$employee->Employee_image)}}" alt="No Image">
       </td> 
 
-      <td>{{$employee->department->Name}}</td>
-      <td>{{$employee->designation->title}}</td>
-
+      <td>{{optional($employee->departmentrel)->Name}}</td>
+      <td>{{optional($employee->designationrel)->title}}</td>
+    
       <td>
 
-        <a class="btn btn-success" href="">Edit</a>
+        <a class="btn btn-success" href="{{route('Employee.edit',$employee->id)}}">Edit</a>
         <a class="btn btn-danger" href="{{route('Employee.delete',$employee->id)}}">Delete</a>
-        <a href="{{route('payroll.form')}}" class="btn btn-danger">Create Payroll</a>
+        <a href="{{route('payroll.form',$employee->id)}}" class="btn btn-danger">Create Payroll</a>
       </td>
 
     </tr>

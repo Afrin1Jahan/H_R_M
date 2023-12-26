@@ -54,10 +54,11 @@ public function profileupdate(Request $request){
     if($user){
 
 $user->update([
+
  'name'=>$request->name,
  'role'=>$request->role,
  'email'=>$request->email
-
+  
 ]);
 
 notify()->success('updated successfully');

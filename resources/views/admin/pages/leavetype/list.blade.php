@@ -9,11 +9,11 @@
     
        <th scope="col">id</th>
      
-      <th scope="col">leavetype</th>
-      <th scope="col">balance</th>
-      <th scope="col">description</th>
+      <th scope="col">Leavetype</th>
+      <th scope="col">Balance</th>
+      <th scope="col">Description</th>
    
-      <th scope="col">status</th>
+      <th scope="col">Action</th>
 
 
     </tr>
@@ -24,15 +24,15 @@
 <tr>
 <th scope="row">{{$key+1,}}</th>
      
-      <td>{{$leavetype->leavetype}}</td>
-      <td>{{$leavetype->balance}}</td>
-      <td>{{$leavetype->description}}</td>
+      <td>{{$leavetype->Leavetype}}</td>
+      <td>{{$leavetype->Balance}}</td>
+      <td>{{$leavetype->Description}}</td>
      
      
 
       <td>
-        <a class="btn btn-success" href="">Edit</a>
-        <a class="btn btn-warning" href="">Delete</a>
+        <a class="btn btn-success" href="{{route('leavetype.edit',$leavetype->id)}}">Edit</a>
+        <a class="btn btn-warning" href="{{route('leavetype.delete',$leavetype->id)}}">Delete</a>
     </tr>
     @endforeach
   </tbody>
