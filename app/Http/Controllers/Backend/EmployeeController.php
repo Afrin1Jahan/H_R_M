@@ -42,7 +42,7 @@ class EmployeeController extends Controller
     public function edit($id){
         $employees = Employee::find($id);
         return view("admin.pages.employee.edit",compact('employees'));
-        return redirect()->route('employee.name');
+       
     }
 
     public function delete($id)

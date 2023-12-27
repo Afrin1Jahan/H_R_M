@@ -26,7 +26,7 @@
       <td>{{$departments-> Name}}</td>
       <td>{{$departments-> Description}}</td>
       <td>{{$departments-> No}}</td>
-      <td>{{$departments-> Location}}</td>
+      <td>{{$departments->Location}}</td>
     <td>
 </tr>
 

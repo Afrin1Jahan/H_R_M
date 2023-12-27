@@ -28,7 +28,7 @@
       <td>{{$employee->name}}</td>
       <td>{{$employee->email}}</td>
      <td>
-        <img style="border-radius: 60px;" width="7%" src="{url('/uploads/',$employee->Employee_image)}}" alt="No Image">
+        <img style="border-radius: 60px;" width="7%" src="{{url('/uploads/'.$employee->image)}}" alt="No Image">
       </td> 
 
       <td>{{optional($employee->departmentrel)->Name}}</td>

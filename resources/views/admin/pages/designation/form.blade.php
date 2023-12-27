@@ -31,7 +31,7 @@
 
     <div class="form-group col-md-6">
       <label for="inputPassword4">Description</label>
-      <textarea name="inputtextarea" name="designation_description" class="form-control" id="inputdescription" cols="80" rows="5"></textarea>
+      <textarea name="designation_description" name="designation_description" class="form-control" id="inputdescription" cols="80" rows="5"></textarea>
       <!-- <input type="textarea" class="form-control" name="designation_description" id="inputPassword4" placeholder="text"> -->
     </div>
 

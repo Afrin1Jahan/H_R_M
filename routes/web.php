@@ -105,6 +105,8 @@ Route::get('/Notice/show/', [FrontendNoticeController::class, 'noticeshow'])->na
             Route::get('/SalaryStracture', [SalarystractureController::class, 'list'])->name('salary.list');
             Route::get('/salarystracture/form', [SalarystractureController::class, 'form'])->name('salary.form');
             Route::post('/salarystracture/store', [SalarystractureController::class, 'store'])->name('salary.store');
+            Route::get('/salarystracture/edit/{id}', [SalarystractureController::class, 'edit'])->name('salary.edit');
+            Route::put('salarystracture/update/{id}', [SalarystractureController::class, 'update'])->name('salary.update');
 
             Route::get('/leavetype/list', [LeaveTypeController::class, 'list'])->name('leavetype.list');
             Route::get('/leavetype/form', [LeaveTypeController::class, 'form'])->name('leavetype.form');

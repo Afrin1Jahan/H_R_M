@@ -9,8 +9,8 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationDefault01">Employee Name</label>
-      
-      <input readonly type="text" class="form-control" id="validationDefault01" placeholder="employee name" name="employee" value="{{ $employees->employee_name}}">
+      <input type="hidden" value="{{$employees->id}}" name="employee_id">
+      <input readonly type="text" class="form-control" id="validationDefault01" placeholder="employee name" name="employee" value="{{ $employees->name}}">
       
    
 </div>
@@ -43,12 +43,11 @@
       <label for="year">Select Year</label>
       <!-- <label for="year">Year:</label> -->
     <select type="text"  class="form-control" id="year" placeholder="enter month" name="year" >
-    <option value="1">2023</option>
-    <option value="2">2024</option>
-    <option value="3">2025</option>
-    <option value="4">2026</option>
-    <option value="5">2027</option>
-    <option value="6">2028</option>
+    <option value="{{ now()->year -1}}">{{ now()->year -1}}</option>
+    <option selected value="{{ now()->year }}">{{ now()->year }}</option>
+    <option value="{{ now()->year + 1 }}">{{ now()->year + 1 }}</option>
+    
+
     </select>
       <!-- <input type="text" class="form-control" id="validationDefault01" placeholder="enter month" name="year" required> -->
     </div>
@@ -57,7 +56,7 @@
 
     <div class="col-md-4 mb-6">
       <label for="">Basic Salary</label>
-      <input readonly type="number" class="form-control" id="" placeholder="Enter basic" name="basic">
+      <input readonly type="number" class="form-control" id="" placeholder="Enter basic" name="basic" value="{{$employees->designationRel->salaryStructure->Basic}}">
 
        
      <!-- <input required type="text" class="form-control" id="" placeholder="Enter basic" name="basic"> -->
@@ -72,7 +71,7 @@
 
     <div class="col-md-4 mb-6">
       <label for="">House Allowance</label>
-      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="houseallowance">
+      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="houseallowance" value="{{$employees->designationRel->salaryStructure->HouseAllownce}}">
       @error('text')
       <div class="alert alert-danger">{{ $message }}</div>
       @enderror
@@ -85,7 +84,7 @@
 
     <div class="col-md-4 mb-6">
       <label for="">Transport Allowance</label>
-      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="transportallowance">
+      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="transportallowance" value="{{$employees->designationRel->salaryStructure->TransportAllowance}}">
       @error('number')
       <div class="alert alert-danger">{{ $message }}</div>
       @enderror
@@ -97,7 +96,7 @@
     
     <div class="col-md-4 mb-6">
       <label for="">Medical Allowance</label>
-      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="medicalallowance">
+      <input readonly type="number" class="form-control" id="" placeholder="Enter amount" name="medicalallowance" value="{{$employees->designationRel->salaryStructure->MedicalAllowance}}">
      
       @error('number')
       <div class="alert alert-danger">{{ $message }}</div>
@@ -105,7 +104,7 @@
 
     </div>
 
-  <button class="btn-info bg-info btn-warning" type="submit">Submit</button>
+  <button class="btn btn-info" type="submit">Submit</button>
 </form>
 
 

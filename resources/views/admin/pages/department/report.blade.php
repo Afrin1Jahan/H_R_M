@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<div id="printDiv" >
 
 <table class="table table-hover">
   <thead>
@@ -36,11 +36,11 @@
 </table>
 
 
-
+</div>
 <div class="text-center">
 <button class="btn btn-success" onclick="printContent('printDiv')">Print</button>
-<div id="printDiv" >
-</div>
+
+
 
 
 @endsection

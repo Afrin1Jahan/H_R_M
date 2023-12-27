@@ -11,5 +11,14 @@ class Designation extends Model
     public function departmentRel(){
       return $this->belongsTo(Department::class, 'department', 'id');
     }
+
+    // public function relDesignation(){
+
+    // }
+
+    public function salaryStructure()
+    {
+      return $this->hasOne(Salarystracture::class,'DesignationType','id');
+    }
 }
 

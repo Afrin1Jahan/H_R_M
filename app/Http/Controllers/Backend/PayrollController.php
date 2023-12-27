@@ -21,10 +21,11 @@ class PayrollController extends Controller
 
 
     public function form($employee_id){
-    //    dd('hi');
+    //    dd($employee_id);
         // $payrolls =payroll::all();
        
-        $employees = Employee::find($employee_id);
+        $employees = Employee::with('designationrel.salaryStructure')->find($employee_id);
+        // dd($employees);
         return view("admin.pages.payroll.form",compact('employees'));
     }
 
@@ -32,22 +33,31 @@ class PayrollController extends Controller
     public function store(Request $request){
         // dd($request-> all());
 
-
-     payroll::create([
+$check=payroll::where('employee_id',$request->employee_id)->where('select_month',$request->month)->where('select_year',$request->year)->first();
+if($check)
+{
+    //already given
+    notify()->warning('Already paid');
+    return redirect()->back();
+}else
+    {
+     
+        payroll::create([
+            "employee_id"=>$request->employee_id,
+            "select_month"=>$request->month,
+            "select_year"=>$request->year,
+            "basic_salary"=>$request->basic,
+            "house_allowance"=>$request->houseallowance,
+            "medical_allowance"=>$request->medicalallowance,
+            "transport_allowance"=>$request->transportallowance,
+            
+          "total"=>$request->basic+$request->houseallowance+$request->medicalallowance+$request->transportallowance
+            ]);
+            notify()->success('Salary paid successfully.');
+            return redirect()->back();
+    }
     
 
-     "employee_name"=>$request->employee,
-     "select_month"=>$request->month,
-     "select_year"=>$request->year,
-     "basic_salary"=>$request->basic,
-     "house_allowance"=>$request->houseallowance,
-     "medical_allowance"=>$request->medicalallowance,
-     "transport_allowance"=>$request->transportallowance,
-     
-   "total"=>$request->basic+$request->houseallowance+$request->medicalallowance+$request->transportallowance
-     ]);
-
-     return redirect()->back();
 
     }
 }

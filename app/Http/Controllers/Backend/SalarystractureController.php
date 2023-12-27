@@ -33,8 +33,51 @@ class SalarystractureController extends Controller
 
    
     }
+
+
+    public function edit($id){
+
+        $salarystracturess= Salarystracture::find($id);
+
+        return view('admin.pages.salarystracture.edit',compact('salarystracturess'));
+        return redirect()->route('salary.list');
+
+   
+    }
+
+    public function update(Request $request,$id){
+
+        $salarystracturess=Salarystracture::find($id);
+    
+    
+    if($salarystracturess){
+    
+    
+        $salarystracturess->update(
+            [
+              
+                'Title'=>$request->title,
+                'Basic'=>$request->basic,
+                'HouseAllownce'=>$request->houseallowance,
+                'MedicalAllowance'=>$request->transportallowance,
+                'TransportAllowance'=>$request->medicalallowance,
+                'total'=>$request->basic+$request->houseallowance+$request->transportallowance+$request->medicalallowance
+
+                // 'employee_id'=>$request->employee_id
+            ]
+            );
+            notify()->success('your data has been Updated!');
+            return redirect()->back();
+    
+        
+    }
+    
+        }
+
+
     public function store(Request $request){
-        //dd($request->all());
+    //   dd($request->all());
+
         salarystracture::create ([
         'DesignationType'=>$request->DesignationType,
          'Title'=>$request->title,

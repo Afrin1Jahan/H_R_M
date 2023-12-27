@@ -35,7 +35,7 @@ public function store(Request $request){
         return redirect()->back()->withErrors($validate);
     }
 
-    // dd($request->all());
+    //  dd($request->all());
     
     Designation::create([
 

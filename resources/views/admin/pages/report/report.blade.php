@@ -4,7 +4,9 @@
 
 
 <button class="btn btn-success" onclick="printContent('printDiv')">Print</button>
-<div id="printDiv" >
+<div class="container" id="printDiv">
+  <p>hdhfashf</p>
+</div>
 <table class="table">
  <thead>
     <tr>
@@ -50,6 +52,7 @@
 <script type="text/javascript">
       
       function printContent(el){
+        
           var restorepage = $('body').html();
           var printcontent = $('#' + el).clone();
           $('body').empty().html(printcontent);

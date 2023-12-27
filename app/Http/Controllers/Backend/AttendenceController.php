@@ -19,41 +19,7 @@ class AttendenceController extends Controller
     }
 
 
-    // public function delete($id)
-    // {
-    //     $attendences = Attendence::find($id);
-    //     if ($attendences) {
-    //         $attendences->delete($id);
-    //         notify()->success('deleted successfully');
-    //         return redirect()->back();
-    //     }
-    // }
-
-    // public function edit($id)
-    // {
-
-    //     $attendences = Attendence::find($id);
-    //     return view("admin.pages.attendence.edit", compact('attendences'));
-    // }
-
-
-    // public function update(Request $request, $id)
-    // {
-    //     $attendences = Attendence::find($id);
-
-    //     if ($attendences) {
-
-
-    //         $attendences->update(
-    //             [
-    //                 'name' => $request->employee_name,
-    //                 'email' => $request->email,
-    //             ]
-    //         );
-    //         notify()->success('your data has been Updated!');
-    //         return redirect()->back();
-    //     }
-    // }
+  
 
 
     public function checkin()
