@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-<a href="{{route('leavetype.form')}}" button ="button" class="btn btn-dark">Add leave type</a>
+
 
 <table class="table">
   <thead>
@@ -37,6 +37,9 @@
     @endforeach
   </tbody>
 </table>
+<div class="text-center">
 
+<a href="{{route('leavetype.form')}}" button ="button" class="btn btn-dark">Add leave type</a>
+</div>
 
 @endsection
