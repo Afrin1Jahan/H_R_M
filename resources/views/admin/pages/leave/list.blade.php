@@ -12,6 +12,7 @@
       <th scope="col">leavetype</th>
       <th scope="col">start_date</th>
       <th scope="col">end_date</th>
+      <th scope="col">Total days</th>
       <th scope="col">emergency_contact</th>
       <th scope="col">reason_for_leave</th>
       <th scope="col">status</th>
@@ -23,11 +24,13 @@
   <tbody>
 
   @foreach ( $leaves as $key=> $leave)
+  
   <tr>
 <th scope="row">{{$key+1,}}</th>
-<td>{{$leave->relLeavetype->Leavetype}}</td>
+<td>{{$leave->relLeavetype->Leavename}}</td>
 <td>{{$leave->start_date}}</td>
 <td>{{$leave->end_date}}</td>
+<td>{{$leave->no_of_days}}</td>
 <td>{{$leave->emergency_contact}}</td>
 <td>{{$leave->reason_for_leave}}</td>
 <td>{{$leave->status}}</td>

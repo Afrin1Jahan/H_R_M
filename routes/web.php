@@ -96,6 +96,7 @@ Route::get('/Notice/show/', [FrontendNoticeController::class, 'noticeshow'])->na
             Route::get('/Employee', [EmployeeController::class, 'employee'])->name('employee.name');
             Route::get('/Employee/form', [EmployeeController::class, 'form'])->name('employee.form');
             Route::get('/Employee/edit/{id}', [EmployeeController::class, 'edit'])->name('Employee.edit');
+            Route::get('/Employee/leave/balance/{id}', [EmployeeController::class, 'balance'])->name('Employee.leave.balance');
 
             Route::post('/Employee/store', [EmployeeController::class, 'store'])->name('employee.store');
            

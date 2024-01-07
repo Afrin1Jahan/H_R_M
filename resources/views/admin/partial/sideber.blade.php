@@ -6,7 +6,7 @@
                     <!-- <div class="sideber"></div>
                     <div class="logo-details">
                         <span class="logo_name">......</span> -->
-                        @if(auth()->user()->role=='admin')
+                    @if(auth()->user()->role=='admin')
                     <a class="nav-link" href="{{route('dashboard.name')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
@@ -15,7 +15,7 @@
                         Dashboard
                     </a>
                     @endif
-                     
+
                     @if(auth()->user()->role=='admin')
                     <a class="nav-link" href="{{route('department.list')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -34,8 +34,8 @@
                         </div>
                         Designation
                     </a>
-                    @endif 
-                    
+                    @endif
+
                     @if(auth()->user()->role=='admin')
                     <a class="nav-link" href="{{route('employee.name')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -44,8 +44,8 @@
                             </i></div>
                         Employee
                     </a>
-                       @endif
-                   
+                    @endif
+
 
                     <a class="nav-link" href="{{route('attendence.list')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -54,10 +54,10 @@
                             </i></div>
                         Attendence
                     </a>
-              
 
-                    
-            
+
+
+
                     <a class="nav-link" href="{{route('payroll.list')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 7.5.415-.207a.75.75 0 0 1 1.085.67V10.5m0 0h6m-6 0h-1.5m1.5 0v5.438c0 .354.161.697.473.865a3.751 3.751 0 0 0 5.452-2.553c.083-.409-.263-.75-.68-.75h-.745M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -65,9 +65,9 @@
                             </i></div>
                         Payroll
                     </a>
-                 
 
-                  @if(auth()->user()->role=='admin')
+
+                    @if(auth()->user()->role=='admin')
                     <a class="nav-link" href="{{route('salary.list')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
@@ -78,16 +78,24 @@
                     @endif
 
                     <div class="dropdown">
-                        <button class=" ml-3  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa-solid fa-bars"></i>
-                            Leave Management
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{route('leave.list')}}"> Leave Request</a>
-                            @if(auth()->user()->role=='admin')
-                            <a class="dropdown-item" href="{{route('leavetype.list')}}">Leave Type</a>
-                            @endif
-                        </div>
+
+
+                        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i> Leave Management</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <!-- <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li> -->
+                                    <a class="dropdown-item" href="{{route('leave.list')}}"> Leave Request</a>
+                                    <li>@if(auth()->user()->role=='admin')
+                                        <a class="dropdown-item" href="{{route('leavetype.list')}}">Leave Type</a>
+                                        @endif
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
 
                     <!-- <a class="nav-link" href="{{route('leave.list')}}">
@@ -108,24 +116,25 @@
                         Notice
                     </a>
 
-                     @endif
+                    @endif
 
                     <!-- <a class="nav-link" href="{{url('/Report')}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Report
                     </a> -->
 
-                    <div class="dropdown">
-                        <button class=" ml-3 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa-solid fa-flag"></i>
-                            Report Management
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{route('user.report')}}">Report for user</a>
+                    
 
+                    @if(auth()->user()->role=='admin')
+                    <a class="" href="{{route('user.report')}}">
+                        <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
+                            </svg>
+                            </i></div>
+                            Report
+                    </a>
+                    @endif
 
-                        </div>
-                    </div>
                     @if(auth()->user()->role=='admin')
                     <a class="nav-link" href="{{route('users.list')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -134,8 +143,8 @@
                             </i></div>
                         Users
                     </a>
-                           @endif
-                   @if(auth()->user()->role=='admin')
+                    @endif
+                    @if(auth()->user()->role=='admin')
                     <a class="nav-link" href="{{route('company.list')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
@@ -144,7 +153,7 @@
                         Company Setup
                     </a>
                     @endif
-                    
+
                     @if(auth()->user()->role=='admin')
                     <a class="nav-link" href="{{url('/HolidayCalander')}}">
                         <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
