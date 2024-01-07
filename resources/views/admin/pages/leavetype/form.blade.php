@@ -8,15 +8,16 @@
 
 
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Leave Type</label>
-      <select type="text" class="form-control"  placeholder="leave type" name="leave_type">
-      <option value="weekly holidays">weekly holidays</option>
+      <label for="inputEmail4">Leave Name</label>
+      <input type="text" class="form-control"  placeholder="leave name" name="leave_name">
+
+      <!-- <option value="weekly holidays">weekly holidays</option>
        <option value="personal leave">personal leave</option> 
        <option value="ill leave">ill leave</option>
        <option value="festival leaves,">pfestival leaves,</option>
        <option value="maternity leave">maternity leave</option>
        <option value="annual leaves">annual leaves/option>
-      </select>
+      </select>  -->
     </div>
 
     <div class="form-group col-md-6">

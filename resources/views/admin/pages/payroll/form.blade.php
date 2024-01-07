@@ -10,7 +10,7 @@
     <div class="col-md-4 mb-3">
       <label for="validationDefault01">Employee Name</label>
       <input type="hidden" value="{{$employees->id}}" name="employee_id">
-      <input readonly type="text" class="form-control" id="validationDefault01" placeholder="employee name" name="employee" value="{{ $employees->name}}">
+     <input readonly type="text" class="form-control" id="validationDefault01" placeholder="employee name" name="employee" value="{{ $employees->name}}"> 
       
    
 </div>

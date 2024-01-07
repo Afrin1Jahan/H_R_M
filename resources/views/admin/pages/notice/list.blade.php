@@ -6,9 +6,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">title</th>
-      <th scope="col">date</th>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
       </tr>
      </thead>
       <tbody>

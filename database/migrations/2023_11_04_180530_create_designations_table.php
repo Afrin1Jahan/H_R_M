@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->text('department');
             $table->string('date');
+            
           
 
             $table->timestamps();

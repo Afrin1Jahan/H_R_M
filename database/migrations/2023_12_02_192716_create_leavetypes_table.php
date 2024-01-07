@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('leavetypes', function (Blueprint $table) {
             $table->id();
            
-            $table->string('Leavetype');
+            $table->string('Leavename');
             $table->string('Balance');
             $table->string('Description')->nullable();
         

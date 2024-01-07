@@ -51,7 +51,7 @@ class LeaveTypeController extends Controller
         Leavetype::create([
 
 
-            'Leavetype' => $request->leave_type,
+            'Leavename' => $request->leave_name,
             'Balance' => $request->balance,
             'Description' => $request->description_name,
 

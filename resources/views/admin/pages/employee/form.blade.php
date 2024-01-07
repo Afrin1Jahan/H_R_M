@@ -29,7 +29,7 @@
 
  <div class="form-group col-md-6">
             <label for="">Select Role</label>
-            <select type="text" class="form-control" id="" placeholder="enter role" name="role">
+            <select required type="text" class="form-control" id="" placeholder="enter role" name="role">
 
                 <option value="Employee">Employee</option>
                 <option value="admin">Admin</option>

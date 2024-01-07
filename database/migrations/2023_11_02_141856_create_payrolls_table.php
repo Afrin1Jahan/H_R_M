@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            $table->string('employee_name');
+            $table->string('employee_id');
             $table->string('select_month');
             $table->string('select_year');
             $table->string('basic_salary');

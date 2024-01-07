@@ -66,6 +66,7 @@ public function store(Request $request){
 
         'Employee_Name'=>'required',
         'Employee_Email'=>'required',
+        
       
     ]);
 

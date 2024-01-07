@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('Description');
             $table->string('No');
             $table->text('Location');
+            $table->string('Action')->nullable();
             // $table->text('employee_id');
 
             $table->timestamps();

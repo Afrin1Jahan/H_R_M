@@ -10,8 +10,8 @@
 <table class="table table-hover">
   <thead>
   <tr>
-      <th scope="col">id</th>
-      <!-- <th scope="col">id</th> -->
+      
+   
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col">No</th>
@@ -23,12 +23,15 @@
   <tbody>
   
   <tr>
+ 
       <td>{{$departments-> Name}}</td>
       <td>{{$departments-> Description}}</td>
       <td>{{$departments-> No}}</td>
       <td>{{$departments->Location}}</td>
     <td>
+ 
 </tr>
+
 
 </tbody>
 </table> 

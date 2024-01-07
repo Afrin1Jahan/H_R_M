@@ -12,7 +12,7 @@ class DepartmentController extends Controller
 {
     public function list(){
 
-        $departments=Department::paginate(5);   
+        $departments=Department::paginate(5); 
        return view('admin.pages.department.list',compact('departments'));
     //    dd('habijabi');
     }
@@ -56,7 +56,7 @@ if($departments){
     $departments->update(
         [
             'Name'=>$request->department_name,
-            'Description'=>$request->inputtextarea,
+            'Description'=>$request->description_name,
             'No'=>$request->department_no,
             'Location'=>$request->department_location,
             // 'employee_id'=>$request->employee_id
@@ -77,13 +77,16 @@ if($departments){
     }
 
     public function store(Request $request){
-
+          
+        // dd($request->all());
 
       $validate= Validator::make($request->all(),[
         
         
        'department_name'=>'required',
-       'department_no'=>'required'
+       'department_no'=>'required',
+       'department_location'=>'required',
+        'description_name'=>'required'
 
 
       ]);
@@ -92,18 +95,19 @@ if($departments){
       if($validate->fails()){
 
 
-        // notify()->error($validate->getMessageBag());
-        return redirect()->back()->withErrors($validate);
+        notify()->error($validate->getMessageBag());
+        return redirect()->back();
 
     }
-        // dd($request-> all());
+    //  dd($request-> all());
 
         Department::create(
             [
-                'name'=>$request->department_name,
-                'description'=>$request->inputtextarea,
-                'no'=>$request->department_no,
-                'location'=>$request->department_location,
+                'Name'=>$request->department_name,
+                'Description'=>$request->description_name,
+                'No'=>$request->department_no,
+                'Location'=>$request->department_location,
+                
                 // 'employee_id'=>$request->employee_id
             ]
             );

@@ -29,7 +29,7 @@
 
     <div class="form-group col-md-6">
       <label for="inputtextarea">Description</label>
-      <textarea name="inputtextarea" name="description_name" class="form-control" id="inputdescription" cols="80" rows="5"></textarea>
+      <textarea required  name="description_name" class="form-control" id="inputdescription" cols="80" rows="5"></textarea>
     </div>
 
 
@@ -47,7 +47,7 @@
   
     <div class="form-group col-md-6">
       <label for="inputlocation">Location</label>
-      <input type ="text" name="department_location" class="form-control" id="inputEmail4" placeholder="Text">
+      <input required type ="text" name="department_location" class="form-control" id="inputEmail4" placeholder="Text">
     </div>
     
 

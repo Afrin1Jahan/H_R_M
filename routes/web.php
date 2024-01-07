@@ -84,8 +84,13 @@ Route::get('/Notice/show/', [FrontendNoticeController::class, 'noticeshow'])->na
             Route::get('/report', [ReportController::class, 'reportview'])->name('department.report');
 
             Route::get('/designation', [DesignationController::class, 'designation'])->name('des');
-            Route::get('/designation/list', [DesignationController::class, 'list'])->name('designation.list');
-            Route::get('/designation/creatform', [DesignationController::class, 'creatform'])->name('designation.form');
+            Route::get('/designation/list', [DesignationController::class, 'form'])->name('designation.form');
+
+            Route::get('/designation/edit/{id}', [DesignationController::class, 'edit'])->name('designation.edit');
+
+       Route::put('/designation/update/{id}',[DesignationController::class,'updated'])->name('designation.update');
+
+            // Route::get('/designation/creatform', [DesignationController::class, 'creatform'])->name('designation.form');
             Route::post('/designation/store', [DesignationController::class, 'store'])->name('designation.store');
 
             Route::get('/Employee', [EmployeeController::class, 'employee'])->name('employee.name');

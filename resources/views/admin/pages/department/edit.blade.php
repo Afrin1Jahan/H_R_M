@@ -81,14 +81,14 @@
 
     <div class="form-group col-md-6">
       <label for="inputtextarea">Description</label>
-      <textarea name="inputtextarea" name="description_name" class="form-control" id="inputdescription" cols="80" rows="5"></textarea>
+      <textarea  name="description_name"  class="form-control" id="inputdescription" cols="80" rows="5"></textarea>
     </div>
 
 
     
     <div class="form-group col-md-6">
       <label for="inputnumber">No</label>
-      <input required type ="tel" name="department_no" class="form-control"  placeholder="Text">
+      <input value="{{$departments->No}}" required type ="tel" name="department_no" class="form-control"  placeholder="Text">
       @error('department_no')
       <div class="alert alert-danger">{{$message}}</div>
       @enderror

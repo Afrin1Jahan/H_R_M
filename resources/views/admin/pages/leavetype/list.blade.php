@@ -9,7 +9,7 @@
     
        <th scope="col">id</th>
      
-      <th scope="col">Leavetype</th>
+      <th scope="col">Leave name</th>
       <th scope="col">Balance</th>
       <th scope="col">Description</th>
    
@@ -24,7 +24,7 @@
 <tr>
 <th scope="row">{{$key+1,}}</th>
      
-      <td>{{$leavetype->Leavetype}}</td>
+      <td>{{$leavetype->Leavename}}</td>
       <td>{{$leavetype->Balance}}</td>
       <td>{{$leavetype->Description}}</td>
      
