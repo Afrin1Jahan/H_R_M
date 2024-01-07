@@ -33,9 +33,9 @@
 
       <td>{{optional($employee->departmentrel)->Name}}</td>
       <td>{{optional($employee->designationrel)->title}}</td>
-    
       <td>
 
+        <a class="btn btn-success" href="{{route('Employee.leave.balance',$employee->user_id)}}">leave Balance</a>
         <a class="btn btn-success" href="{{route('Employee.edit',$employee->id)}}">Edit</a>
         <a class="btn btn-danger" href="{{route('Employee.delete',$employee->id)}}">Delete</a>
         <a href="{{route('payroll.form',$employee->id)}}" class="btn btn-danger">Create Payroll</a>
