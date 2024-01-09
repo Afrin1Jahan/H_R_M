@@ -2,43 +2,44 @@
 
 @section('content')
 
-
 <div id="printDiv" >
 
 <table class="table table-hover">
   <thead>
   <tr>
-      <th scope="col">id</th>
-      <!-- <th scope="col">id</th> -->
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <!-- <th scope="col">No</th>
-      <th scope="col">Location</th> -->
       
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Department</th>
+      <!-- <th scope="col">Date</th> -->
+     
+      <!-- <th scope="col">Status</th> -->
+    
     </tr>
   </thead>
-
   <tbody>
-  @foreach ($departments as $key=>$department)
+
+
+  @foreach($designations as $key=>$designation)
+
+
+
   <tr>
   <th scope="row">{{$key+1}}</th>
-      <!-- <th> {{$department ->id}}</th> -->
-      <td>{{$department-> Name}}</td>
-      <td>{{$department-> Description}}</td>
-      <!-- <td>{{$department-> No}}</td>
-      <td>{{$department-> Location}}</td> -->
+  <td>{{$designation->title}}</td> 
+  <td>{{$designation->description}}</td> 
+  <td>{{optional($designation->departmentRel)->Name}}</td> 
+@endforeach
 
 
-       
-      @endforeach
- 
- </tbody>
+
+</tbody>
 </table>
 
 
 </div>
 <div class="text-center">
-  
 <button class="btn btn-success" onclick="printContent('printDiv')">Print</button>
 
 
@@ -58,4 +59,5 @@
       }
   
   </script>
+
 @endpush

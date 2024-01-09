@@ -24,11 +24,11 @@
       <label for="inputPassword4">Leave Balance</label>
       <input type="number" class="form-control" id="" placeholder="balance" name="balance">
     </div>
-
+<!-- 
     <div class="form-group col-md-6">
       <label for="inputPassword4">Description</label>
       <textarea  name="description_name" class="form-control" id="inputdescription" cols="80" rows="10"></textarea>
-    </div>
+    </div> -->
 
   
   

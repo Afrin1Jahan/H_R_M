@@ -116,4 +116,8 @@ class AttendenceController extends Controller
             return redirect()->back();
         
     }
+    public function report(){
+        $attendences = Attendence::all();
+        return view('admin.pages.attendence.report',compact('attendences'));
+    }
  }

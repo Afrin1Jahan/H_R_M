@@ -6,12 +6,13 @@
 <section class="header3 cid-s1YNmF9EpW " >
 
 </div>
-    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(0, 0, 5);"></div>
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(1, 1, 1);"></div>
     <div class="container align-center">
         <div class="row justify-content-center">
             <div class="mbr-white col-md-12 col-lg-10">
-           
-                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-3"><strong></strong><strong><br></strong><p  class="h1" class="text-danger "> Human Resource Management For Kodeeo</p></h1>
+            
+                <h1 class="text-black bg-primary p-3"><strong><br></strong><p  class="h1" class="text-danger "> Human Resource Management For Kodeeo </p></h1>
+                <!-- <h1 class="" style="text-align: center; background-color: green">Human Resource Management For Kodeeo</h1> -->
                <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5"><br>
                 </p> 
                 <p class="mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style display-5"><br>
@@ -24,7 +25,7 @@
     
 
 </section>
-
+<!-- 
 <section class="features4 cid-s1YNzGfN84" id="features4-2">
 
     
@@ -136,7 +137,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="content2 cid-s1YQ6E1SFC" id="content2-e">
     
@@ -149,21 +150,19 @@
 
             <div class="col-lg-6 col-md-12 md-pb">
                 <div class="title-wrapper align-left">
-                    <div class="line"></div>
-                    <h3 class="mbr-section-title mbr-white mbr-semibold pb-3 mbr-fonts-style display-2">About Us</h3>
-                    <p class="mbr-text pb-3 mbr-white mbr-light mbr-fonts-style display-7">Lorem ipsum dolor sit
-                        amet, consectetur adipiscing elit. Mauris finibus leo et diam fermentum ullamcorper. Nulla
-                        venenatis nibh sollicitudin tincidunt gravida. Nam convallis justo et ligula luctus suscipit.
-                        Etiam eu nisi turpis. Donec sollicitudin accumsan quam, rhoncus sagittis metus semper quis.
-                        Praesent convallis mauris sed ipsum lobortis facilisis. Nulla cursus sem non nunc sagittis, a
-                        volutpat mauris lobortis. Nulla ut feugiat tellus. Nam dictum nisi nec scelerisque auctor<br>
+                    <!-- <div class="line"></div> -->
+                    <h3 class="text-white">About Us</h3>
+                    <p class="mbr-text pb-3 mbr-white mbr-light mbr-fonts-style display-7">Welcome to Kodeeo, where innovation meets excellence in software development. As the company administrator, I am proud to introduce you to our dynamic and forward-thinking organization.<br>
                     </p>
                 </div>
             </div>
         </div>
     </div>
+<!-- <style> h1 { text-align: center; background-color: green; }</style> -->
 </section>
 
+<style> h1 { text-align: center; background-color: green; }</style>
 @endsection
 
-
+<!-- mbr-section-title mbr-white mbr-semibold pb-3 mbr-fonts-style display-2 -->
+<!-- about us er class er vetor eita silo ami text-white disi white dekahr jonno-->

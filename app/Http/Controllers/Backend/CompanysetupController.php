@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Setup;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CompanysetupController extends Controller
 {
@@ -22,6 +23,29 @@ class CompanysetupController extends Controller
     public function store(Request $request){
         // dd($request->all());
 
+
+        $validate= Validator::make($request->all(),[
+        
+        
+            'phone'=>'required|digits_between:1,11|numeric'
+            
+            //  'description_name'=>'required'
+     
+     
+           ]);
+           if($validate->fails()){
+
+
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
+    
+        }
+
+
+
+
+
+
         $fileName=null;
         if($request->hasFile('company_image'))
         {
@@ -38,10 +62,10 @@ class CompanysetupController extends Controller
             [
                 'name'=>$request-> company_name,
                 'address'=>$request->company_address,
-                'logo'=>$fileName,
+                // 'logo'=>$fileName,
                 'email'=>$request->email,
                 'phone'=>$request->phone,
-                'aboutus'=>$request->aboutus,
+                // 'aboutus'=>$request->aboutus,
                 
                 
             ]

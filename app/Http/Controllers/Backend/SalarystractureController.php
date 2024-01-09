@@ -93,4 +93,9 @@ class SalarystractureController extends Controller
         return redirect()->route('salary.list');
 
     }
+
+    public function report(){
+        $salarystracturess= Salarystracture::all();
+        return view('admin.pages.salarystracture.report',compact('salarystracturess'));
+    }
 }

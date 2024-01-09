@@ -86,22 +86,22 @@
 
 
     
-    <div class="form-group col-md-6">
+    <!-- <div class="form-group col-md-6">
       <label for="inputnumber">No</label>
       <input value="{{$departments->No}}" required type ="tel" name="department_no" class="form-control"  placeholder="Text">
       @error('department_no')
       <div class="alert alert-danger">{{$message}}</div>
       @enderror
-    </div>
+    </div> -->
 
 
     
-  
+<!--   
     <div class="form-group col-md-6">
       <label for="inputlocation">Location</label>
       <input type ="text" name="department_location" class="form-control" id="inputEmail4" placeholder="Text">
     </div>
-    
+     -->
 
 
     

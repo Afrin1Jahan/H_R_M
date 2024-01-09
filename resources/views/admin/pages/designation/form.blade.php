@@ -57,11 +57,11 @@
 
 
  
-
+<!-- 
   <div class="form-group col-md-6">
     <label for="inputAddress">Date</label>
     <input required type="date" class="form-control" name="designation_date" id="inputAddress" placeholder="date">
-  </div>
+  </div> -->
  
   
   <button type="submit" class="btn-info bg-info btn-primary">submit</button>

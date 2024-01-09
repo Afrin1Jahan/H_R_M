@@ -138,4 +138,9 @@ class EmployeeController extends Controller
             return redirect()->route('employee.name');
         }
     }
+
+    public function report(){
+        $employees = Employee::all();
+        return view('admin.pages.employee.report',compact("employees"));
+    }
 }

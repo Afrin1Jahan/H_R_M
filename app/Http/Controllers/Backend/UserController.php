@@ -118,6 +118,20 @@ public function createFrom(){
 }
 
 
+public function delete($id){
+
+    $users=User::find($id);
+
+    if( $users){
+        $users->delete($id);
+        notify()->success('Deleted Successfully');
+        return redirect()->back();
+    }}
+
+
+
+
+
 public function store(Request $request){
 //  dd($request->all());
     
@@ -136,7 +150,7 @@ public function store(Request $request){
 
 
 
-    
+  
 
     $fileName=null;
     if($request->hasFile('user_image'))
@@ -166,6 +180,9 @@ public function store(Request $request){
 
 
 }
+
+
+
 
 
 }

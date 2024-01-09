@@ -12,7 +12,7 @@
       <th scope="col">Title</th>
       <th scope="col">Description</th>
       <th scope="col">Department</th>
-      <th scope="col">Date</th>
+      <!-- <th scope="col">Date</th> -->
       <th scope="col">Action</th>
       <!-- <th scope="col">Status</th> -->
     
@@ -30,11 +30,12 @@
   <td>{{$designation->title}}</td> 
   <td>{{$designation->description}}</td> 
   <td>{{optional($designation->departmentRel)->Name}}</td> 
-  <td>{{$designation->date}}</td> 
+  <!-- <td>{{$designation->date}}</td>  -->
   
   <td>
       
   <a class="btn btn-success" href="{{route('designation.edit',$designation->id)}}">Edit</a>
+  <a class="btn btn-danger" href="{{route('designation.delete',$designation->id)}}">Delete</a> 
       <!-- <a class="btn btn-danger" href="">Delete</a>  -->
     
     </td> 
@@ -48,6 +49,7 @@
 
 <div class="text-center">
 <a href="{{route('designation.form')}}" class="btn btn-warning">Add Designation</a>
+<a href="{{route('designation.report')}}" class="btn btn-success">Report</button></a>
 </div>
 
 @endsection

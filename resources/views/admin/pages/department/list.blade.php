@@ -13,8 +13,8 @@
       <!-- <th scope="col">id</th> -->
       <th scope="col">Name</th>
       <th scope="col">Description</th>
-      <th scope="col">No</th>
-      <th scope="col">Location</th>
+      <!-- <th scope="col">No</th>
+      <th scope="col">Location</th> -->
       
       <th scope="col">Action</th>
     </tr>
@@ -27,8 +27,8 @@
       <!-- <th> {{$department ->id}}</th> -->
       <td>{{$department-> Name}}</td>
       <td>{{$department-> Description}}</td>
-      <td>{{$department-> No}}</td>
-      <td>{{$department-> Location}}</td>
+      <!-- <td>{{$department-> No}}</td>
+      <td>{{$department-> Location}}</td> -->
 
 
   

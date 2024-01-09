@@ -10,9 +10,13 @@
             </div> -->
             <div class="container">
             <div class="container">
+            <div class="container">
+            <div class="container">
             <div class="text-center">
             <div class="col-12 col-lg-6 col-md-6">
                 <p class="mbr-text2 align-right mbr-fonts-style align-left display-7">@Develop By Afrin Jahan Mim  <a href="#" class="text-secondary">Kodeeo</a></p>
+            </div>
+            </div>
             </div>
             </div>
             </div>

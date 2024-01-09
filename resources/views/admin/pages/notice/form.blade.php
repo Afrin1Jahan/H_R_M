@@ -7,13 +7,13 @@
 
   <div>  
     <div class="form-group col-md-4">
-      <label for="inputEmail4">title</label>
-      <input type="text" class="form-control" id="" name="title"   placeholder="title">
+      <label for="inputEmail4">Title</label>
+      <textarea type="text" class="form-control" id="" name="title"  placeholder="Title" cols="100" rows="8" ></textarea>
     </div>
 
   
     <div class="form-group col-md-4">
-      <label for="inputEmail4">date</label>
+      <label for="inputEmail4">Date</label>
       <input type="date" class="form-control" id="" name="date"    placeholder="date">
     </div>
   </div>

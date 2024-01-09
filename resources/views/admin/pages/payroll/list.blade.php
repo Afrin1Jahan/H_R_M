@@ -1,6 +1,8 @@
 @extends('admin.master')
 @section('content')
-<h5>Payroll System</h5>
+<div class="text-center fw-bold">
+<h1>Payroll Information List</h1>
+</div>
 
 
 <table class="table table-white">
@@ -24,17 +26,19 @@
 <td>{{$payroll->employee_id}}</td>
 <td>{{$payroll->select_month}}</td>
 <td>{{$payroll->select_year}}</td>
-<td>{{$payroll->basic_salary}}</td>
-<td>{{$payroll->house_allowance}}</td>
-<td>{{$payroll->medical_allowance}}</td>
-<td>{{$payroll->transport_allowance}}</td>
-<td>{{$payroll->total}}</td>
+<td>{{$payroll->basic_salary}}BDT</td>
+<td>{{$payroll->house_allowance}}BDT</td>
+<td>{{$payroll->medical_allowance}}BDT</td>
+<td>{{$payroll->transport_allowance}}BDT</td>
+<td>{{$payroll->total}}BDT</td>
     
     </tr>
     @endforeach
   </tbody>
 </table>
-
+<div class="text-center">
+<a href="{{route('payroll.report')}}" class="btn btn-warning">Report</button></a>
+</div>
 
 
 

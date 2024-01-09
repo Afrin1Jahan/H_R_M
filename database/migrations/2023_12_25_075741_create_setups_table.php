@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->string('logo')->nullable();
+            // $table->string('logo')->nullable();
             $table->string('email');
             $table->string('phone');
-            $table->string('aboutus');
+            // $table->string('aboutus');
         
             $table->timestamps();
         });

@@ -60,4 +60,8 @@ if($check)
 
 
     }
+    public function report(){
+        $payrolls =Payroll::all();
+        return view('admin.pages.payroll.report',compact('payrolls'));
+    }
 }

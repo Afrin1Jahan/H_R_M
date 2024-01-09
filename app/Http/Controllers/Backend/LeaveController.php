@@ -113,6 +113,7 @@ class LeaveController extends Controller
       [
         'start_date' => 'required|date',
         'end_date' => 'required|after:start_date',
+        'emergency_contact'=>'required|digits_between:1,11|numeric'
       ]
     );
 

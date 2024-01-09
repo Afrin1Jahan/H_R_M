@@ -19,13 +19,13 @@
 
 
             
-
+<!-- 
             <div class="col-md-4 mb-6">
                 <label for="">CompanyLogo</label>
                 <input type="file" class="form-control" id="" placeholder="Enter logo" name="companylogo">
 
 
-            </div>
+            </div> -->
 
 
 
@@ -44,13 +44,15 @@
             </div>
 
 
-            <div class="col-md-4 mb-6">
+            <!-- <div class="col-md-4 mb-6">
                 <label for="">AboutUs</label>
                 <input required type="text" class="form-control" id="" placeholder="Enter aboutus" name="aboutus">
-            </div>
+            </div> -->
           
         </div>
+    <div>
         <button type="Submit" class="btn-info bg-info btn-primary">Submit</button>
+    </div>
 </form>
 
 

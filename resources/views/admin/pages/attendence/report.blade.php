@@ -1,13 +1,7 @@
 @extends('admin.master')
 @section('content')
-<H1>Attendance List</H1>
-<div>
-<a href="{{route('attendence.checkin')}}"button ="button" class="btn btn-dark">Check-In</a>
-
-<a href="{{route('attendence.checkout')}}"button ="button" class="btn btn-dark">Check-Out</a>
-<a href="{{route('attendance.report')}}" class="btn btn-success">Report</button></a>
-
- <table class="table">
+<div class="text-center" id="printDiv">
+<table class="table">
   <thead>
     <tr>
      
@@ -35,17 +29,31 @@
    <td>{{$attendence->select_date }}</td>
    <td>{{$attendence->dutyhour }}</td>
    <td>{{$attendence->overtime }}</td>
- <!-- <td>
-    <a class="btn btn-primary" href="">View</a>
-    <a class="btn btn-success" href="{{route('attendence.edit',$attendence->id)}}">Edit</a>
-    <a class="btn btn-danger" href="{{route('attendence.delete',$attendence->id)}}">Delete</a> 
-  
-  </td>  -->
-  </tr>
+</tr>
+   @endforeach
+   </tbody>
+</table>
 
-    @endforeach
-  </tbody>
-  </table> 
-  </div>
-  {{$attendences->links()}} 
-    @endsection
+
+</div>
+
+<button class="btn btn-success" onclick="printContent('printDiv')">Print</button>
+
+
+
+<script type="text/javascript">
+      
+      function printContent(el){
+          var restorepage = $('body').html();
+          var printcontent = $('#' + el).clone();
+          $('body').empty().html(printcontent);
+          window.print();
+          $('body').html(restorepage);
+      }
+  
+  </script>
+
+@endsection
+
+
+

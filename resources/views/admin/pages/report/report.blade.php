@@ -5,8 +5,8 @@
 
 <button class="btn btn-success" onclick="printContent('printDiv')">Print</button>
 <div class="container" id="printDiv">
-  <p>hdhfashf</p>
-</div>
+  
+
 <table class="table">
  <thead>
     <tr>
@@ -14,8 +14,8 @@
       <th scope="col">Name</th>
       <th scope="col">Image</th>
       <th scope="col">Email</th>
-      <th scope="col">Department</th>
-      <th scope="col">Designation</th>
+      <!-- <th scope="col">Department</th>
+      <th scope="col">Designation</th> -->
       <th scope="col">Role</th>
       
     </tr>
@@ -26,13 +26,13 @@
         <td>{{$key+1}}</td>
         <td>{{$User->name}}</td>
         <td>
-            <img style="border-radius: 60px;" width="50%" src="{{url('/uploads/'.$User->image)}}" alt="">
+            <img style="border-radius: 20px;" width="50%" src="{{url('/uploads/'.$User->image)}}" alt="">
         </td>
         
         <td>{{$User->email}}</td>
-
+<!-- 
         <td>{{$User->Name	}}</td>
-        <td>{{$User->title}}</td>
+        <td>{{$User->title}}</td> -->
         <td>{{$User->role}}</td>
       
 

@@ -56,9 +56,9 @@ if($departments){
     $departments->update(
         [
             'Name'=>$request->department_name,
-            'Description'=>$request->description_name,
-            'No'=>$request->department_no,
-            'Location'=>$request->department_location,
+            'Description'=>$request->description_name
+           
+            // 'Location'=>$request->department_location,
             // 'employee_id'=>$request->employee_id
         ]
         );
@@ -84,8 +84,7 @@ if($departments){
         
         
        'department_name'=>'required',
-       'department_no'=>'required',
-       'department_location'=>'required',
+       
         'description_name'=>'required'
 
 
@@ -105,8 +104,7 @@ if($departments){
             [
                 'Name'=>$request->department_name,
                 'Description'=>$request->description_name,
-                'No'=>$request->department_no,
-                'Location'=>$request->department_location,
+              
                 
                 // 'employee_id'=>$request->employee_id
             ]

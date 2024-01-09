@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('department');
-            $table->string('date');
+            // $table->string('date');
             
           
 

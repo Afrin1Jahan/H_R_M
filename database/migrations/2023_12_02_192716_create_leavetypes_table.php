@@ -18,7 +18,7 @@ return new class extends Migration
            
             $table->string('Leavename');
             $table->string('Balance');
-            $table->string('Description')->nullable();
+            // $table->string('Description')->nullable();
         
             $table->string('Action')->nullable();
 

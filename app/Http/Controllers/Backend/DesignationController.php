@@ -50,7 +50,7 @@ if($designations){
         'title'=>$request->designation_title,
         'description'=>$request->designation_description,
 
-        'date'=>$request->designation_date,
+        // 'date'=>$request->designation_date,
         // 'employee_id'=>$request->employee_id
     ]
     );
@@ -62,7 +62,15 @@ if($designations){
 
 }
 
+public function delete($id){
 
+    $designations=Designation::find($id);
+
+    if( $designations){
+        $designations->delete($id);
+        notify()->success('Deleted Successfully');
+        return redirect()->back();
+    }}
 
 
 
@@ -87,7 +95,7 @@ public function store(Request $request){
        ' designation_title'=>'requied',
        'designation_description'=>'required',
        'department'=>'required',
-       'designation_date'=>'required'
+    //    'designation_date'=>'required'
 
 
     ]);
@@ -103,7 +111,7 @@ public function store(Request $request){
         'title'=>$request->designation_title,
         'description'=>$request->designation_description,
         'department'=>$request->department,
-        'date'=>$request->designation_date,
+        // 'date'=>$request->designation_date,
    
        
     
@@ -113,6 +121,11 @@ public function store(Request $request){
     return redirect()->route('des');
 
     
+}
+
+public function reportview(){
+    $designations = Designation::all();
+    return view('admin.pages.designation.report',compact('designations'));
 }
 
 

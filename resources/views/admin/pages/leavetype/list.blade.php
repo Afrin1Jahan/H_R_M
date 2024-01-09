@@ -11,8 +11,8 @@
      
       <th scope="col">Leave name</th>
       <th scope="col">Balance</th>
-      <th scope="col">Description</th>
-   
+      <!-- <th scope="col">Description</th>
+    -->
       <th scope="col">Action</th>
 
 
@@ -26,7 +26,7 @@
      
       <td>{{$leavetype->Leavename}}</td>
       <td>{{$leavetype->Balance}}</td>
-      <td>{{$leavetype->Description}}</td>
+      <!-- <td>{{$leavetype->Description}}</td> -->
      
      
 

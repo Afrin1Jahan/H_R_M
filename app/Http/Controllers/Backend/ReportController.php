@@ -19,3 +19,5 @@ $departments = Department::all();
 return view("admin.pages.department.report",compact('departments'));
     }
 }
+
+

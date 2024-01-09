@@ -22,8 +22,11 @@
             <p class="text-muted mb-1">{{auth()->user()->role}}</p>
             <p class="text-muted mb-4">{{auth()->user()->email}}</p>
 
-            <img src="url('/uploads/20231220092123.jpg')" alt="avatar"
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
+
+            <!-- <img src="url('/uploads/20231220092123.jpg')" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;"> -->
             
             <a href="{{route('profile.edit')}}"  type="button" class="btn-info bg-info btn-primary" >Edit</a>
       
