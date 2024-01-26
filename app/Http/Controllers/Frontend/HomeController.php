@@ -16,7 +16,13 @@ class HomeController extends Controller
         return view("frontend.pages.service");
     }
     
+    public function changeLang($locale){
+        app()->setlocale($locale);
+        session()->put('locale',$locale);
 
+        return redirect()->route('home');
+
+    }
 
 
     

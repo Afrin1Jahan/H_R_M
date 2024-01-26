@@ -142,16 +142,17 @@
 <section class="content2 cid-s1YQ6E1SFC" id="content2-e">
     
     
-    <div class="container">
+   <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-12 md-pb">
-               <img src="{{url('uploads/kodeeo_logo.jpg')}}" alt="Image" class="img-fluid">
+               <!-- <img src="{{url('uploads/kodeeo_logo.jpg')}}" alt="Image" class="img-fluid"> -->
             </div>
 
             <div class="col-lg-6 col-md-12 md-pb">
                 <div class="title-wrapper align-left">
                     <!-- <div class="line"></div> -->
                     <h3 class="text-white">About Us</h3>
+                    <a href="{{__('Abou Us')}}"></a>
                     <p class="mbr-text pb-3 mbr-white mbr-light mbr-fonts-style display-7">Welcome to Kodeeo, where innovation meets excellence in software development. As the company administrator, I am proud to introduce you to our dynamic and forward-thinking organization.<br>
                     </p>
                 </div>

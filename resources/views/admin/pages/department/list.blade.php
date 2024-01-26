@@ -47,9 +47,7 @@
 @endforeach
 
     
-  
-  </tbody>
-</table> 
+
 {{$departments->links()}}
 <div class="text-center">
   <a href="{{route('department.form')}}" class="btn btn-warning">Add new department</button></a>

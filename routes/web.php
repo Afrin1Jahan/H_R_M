@@ -41,8 +41,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 //website panel routs
-
+Route::group(['middleware'=>'locale'],function(){
 Route::get('/', [FrontendHomeController::class, 'home'])->name('home');
+Route::get('/change-lang/{locale}', [FrontendHomeController::class, 'changeLang'])->name('change.lang');
 Route::get('/serviceview', [FrontendHomeController::class, 'service'])->name('service.view');
 Route::post('/search/notice', [NoticeController::class, 'search'])->name('search.notice');
 Route::get('/Notice/show/', [FrontendNoticeController::class, 'noticeshow'])->name('notice.show');
@@ -182,4 +183,5 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/user/delete/{id}',[UserController::class,'delete'])->name('user.delete');
     });
 }); 
+});
 // });
